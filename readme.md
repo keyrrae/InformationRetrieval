@@ -1,1 +1,1 @@
-# UCSB Winter 2016 Parallel Computing
+# UCSB Winter 2016 CS240A Parallel Computing

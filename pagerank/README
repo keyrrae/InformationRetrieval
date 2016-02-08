@@ -1,0 +1,28 @@
+This is a startup directory for HW2
+
+check.py
+	-- Automatically check the running results with the expected results under test
+	(1 iteations/10 iterations, test data are in data/simple*)
+	-- This file involves some formatting feature not available in Python 2.6
+	-- You may have to modify this code to match the environment at Comet or use
+	a CSIL machine to test. 
+
+data
+	simple1, simple2, simple3 are 3 small test graphs. 
+	The expected results are listed in  test directory.
+	wiki is a wikipedia graph. 
+
+pagerank
+	The directory contains the  PageRank algorithm code. You only need to modify simple_page_rank.py
+
+run_mock_pagerank.py
+	The driver to call simple pageRank using a Fake RDD under a local Python environment.
+	Formatting is simplified for Pyton 2.6 so it can work on Comet.
+run_pagerank.py
+	The driver to call simple pageRank using regular Spark RDD. 
+	Formatting is simplified for Pyton 2.6 so it can work on Comet.
+test
+	The expected results for simple pagerank algorithm are listed for 1 and 10 iterations.
+
+utils
+	Supporting utilities including one that produces the names for wiki data from numbers.

@@ -1,0 +1,1197 @@
+myHadoop: Setting MH_IPOIB_TRANSFORM='s/\([^.]*\).*$/\1.ibnet/' from myhadoop.conf
+myHadoop: Setting MH_SCRATCH_DIR=/scratch/$USER/$SLURM_JOBID from myhadoop.conf
+myHadoop: Using HADOOP_HOME=/opt/hadoop/2.6.0
+myHadoop: Using MH_SCRATCH_DIR=/scratch/xuanwang/1606799
+myHadoop: Using JAVA_HOME=/usr/java/latest
+myHadoop: Generating Hadoop configuration in directory in /home/xuanwang/mycluster.conf...
+myHadoop: Backing up old config dir to /home/xuanwang/mycluster.conf.0...
+`/home/xuanwang/mycluster.conf' -> `/home/xuanwang/mycluster.conf.0'
+myHadoop: Designating comet-23-01.ibnet as master node (namenode, secondary namenode, and jobtracker)
+myHadoop: The following nodes will be slaves (datanode, tasktracer):
+comet-23-01.ibnet
+comet-23-04.ibnet
+16/02/07 16:08:50 INFO namenode.NameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting NameNode
+STARTUP_MSG:   host = comet-23-01.sdsc.edu/198.202.112.35
+STARTUP_MSG:   args = [-format]
+STARTUP_MSG:   version = 2.6.0
+STARTUP_MSG:   classpath = /home/xuanwang/mycluster.conf:/opt/hadoop/2.6.0/share/hadoop/common/lib/jetty-util-6.1.26.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/commons-configuration-1.6.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/apacheds-kerberos-codec-2.0.0-M15.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/avro-1.7.4.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/api-util-1.0.0-M20.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/slf4j-log4j12-1.7.5.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/jersey-server-1.9.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/commons-beanutils-1.7.0.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/hadoop-annotations-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/jettison-1.1.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/paranamer-2.3.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/gson-2.2.4.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/commons-httpclient-3.1.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/junit-4.11.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/jackson-core-asl-1.9.13.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/jsch-0.1.42.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/commons-lang-2.6.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/jackson-mapper-asl-1.9.13.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/commons-beanutils-core-1.8.0.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/commons-collections-3.2.1.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/jackson-jaxrs-1.9.13.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/apacheds-i18n-2.0.0-M15.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/jsp-api-2.1.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/commons-el-1.0.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/jaxb-api-2.2.2.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/jaxb-impl-2.2.3-1.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/asm-3.2.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/protobuf-java-2.5.0.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/commons-io-2.4.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/xmlenc-0.52.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/guava-11.0.2.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/activation-1.1.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/zookeeper-3.4.6.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/jetty-6.1.26.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/curator-client-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/mockito-all-1.8.5.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/httpcore-4.2.5.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/jasper-runtime-5.5.23.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/xz-1.0.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/java-xmlbuilder-0.4.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/stax-api-1.0-2.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/htrace-core-3.0.4.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/commons-codec-1.4.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/jersey-json-1.9.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/httpclient-4.2.5.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/snappy-java-1.0.4.1.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/log4j-1.2.17.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/commons-logging-1.1.3.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/jersey-core-1.9.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/jasper-compiler-5.5.23.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/servlet-api-2.5.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/curator-recipes-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/api-asn1-api-1.0.0-M20.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/jackson-xc-1.9.13.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/commons-net-3.1.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/commons-digester-1.8.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/curator-framework-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/jets3t-0.9.0.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/jsr305-1.3.9.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/hamcrest-core-1.3.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/hadoop-auth-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/commons-cli-1.2.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/commons-compress-1.4.1.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/slf4j-api-1.7.5.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/commons-math3-3.1.1.jar:/opt/hadoop/2.6.0/share/hadoop/common/lib/netty-3.6.2.Final.jar:/opt/hadoop/2.6.0/share/hadoop/common/hadoop-common-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/common/hadoop-nfs-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/common/hadoop-common-2.6.0-tests.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/jetty-util-6.1.26.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/jersey-server-1.9.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/jackson-core-asl-1.9.13.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/commons-lang-2.6.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/xml-apis-1.3.04.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/jackson-mapper-asl-1.9.13.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/jsp-api-2.1.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/commons-el-1.0.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/commons-daemon-1.0.13.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/asm-3.2.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/protobuf-java-2.5.0.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/commons-io-2.4.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/xmlenc-0.52.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/xercesImpl-2.9.1.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/guava-11.0.2.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/jetty-6.1.26.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/jasper-runtime-5.5.23.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/htrace-core-3.0.4.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/commons-codec-1.4.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/log4j-1.2.17.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/commons-logging-1.1.3.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/jersey-core-1.9.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/servlet-api-2.5.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/jsr305-1.3.9.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/commons-cli-1.2.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/lib/netty-3.6.2.Final.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/hadoop-hdfs-2.6.0-tests.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/hadoop-hdfs-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/hdfs/hadoop-hdfs-nfs-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/jetty-util-6.1.26.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/jline-0.9.94.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/jersey-server-1.9.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/jersey-guice-1.9.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/jettison-1.1.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/guice-servlet-3.0.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/commons-httpclient-3.1.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/jackson-core-asl-1.9.13.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/commons-lang-2.6.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/jackson-mapper-asl-1.9.13.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/commons-collections-3.2.1.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/jackson-jaxrs-1.9.13.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/jaxb-api-2.2.2.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/jaxb-impl-2.2.3-1.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/asm-3.2.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/protobuf-java-2.5.0.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/jersey-client-1.9.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/commons-io-2.4.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/guava-11.0.2.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/aopalliance-1.0.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/activation-1.1.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/zookeeper-3.4.6.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/jetty-6.1.26.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/javax.inject-1.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/xz-1.0.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/guice-3.0.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/stax-api-1.0-2.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/commons-codec-1.4.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/jersey-json-1.9.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/log4j-1.2.17.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/commons-logging-1.1.3.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/jersey-core-1.9.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/servlet-api-2.5.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/jackson-xc-1.9.13.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/leveldbjni-all-1.8.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/jsr305-1.3.9.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/commons-cli-1.2.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/commons-compress-1.4.1.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/lib/netty-3.6.2.Final.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/hadoop-yarn-registry-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/hadoop-yarn-api-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/hadoop-yarn-client-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/hadoop-yarn-applications-unmanaged-am-launcher-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/hadoop-yarn-server-tests-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/hadoop-yarn-server-resourcemanager-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/hadoop-yarn-common-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/hadoop-yarn-server-nodemanager-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/hadoop-yarn-server-web-proxy-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/hadoop-yarn-server-applicationhistoryservice-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/yarn/hadoop-yarn-server-common-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/avro-1.7.4.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/jersey-server-1.9.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/hadoop-annotations-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/jersey-guice-1.9.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/guice-servlet-3.0.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/paranamer-2.3.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/junit-4.11.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/jackson-core-asl-1.9.13.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/jackson-mapper-asl-1.9.13.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/asm-3.2.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/protobuf-java-2.5.0.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/commons-io-2.4.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/aopalliance-1.0.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/javax.inject-1.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/xz-1.0.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/guice-3.0.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/snappy-java-1.0.4.1.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/log4j-1.2.17.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/jersey-core-1.9.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/leveldbjni-all-1.8.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/hamcrest-core-1.3.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/commons-compress-1.4.1.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/lib/netty-3.6.2.Final.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/hadoop-mapreduce-client-app-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/hadoop-mapreduce-client-common-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-2.6.0-tests.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-plugins-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar:/opt/hadoop/2.6.0/share/hadoop/mapreduce/hadoop-mapreduce-client-shuffle-2.6.0.jar:/opt/hadoop/2.6.0/contrib/capacity-scheduler/*.jar
+STARTUP_MSG:   build = https://git-wip-us.apache.org/repos/asf/hadoop.git -r e3496499ecb8d220fba99dc5ed4c99c8f9e33bb1; compiled by 'jenkins' on 2014-11-13T21:10Z
+STARTUP_MSG:   java = 1.7.0_51
+************************************************************/
+16/02/07 16:08:50 INFO namenode.NameNode: registered UNIX signal handlers for [TERM, HUP, INT]
+16/02/07 16:08:50 INFO namenode.NameNode: createNameNode [-format]
+16/02/07 16:08:50 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/02/07 16:08:51 WARN common.Util: Path /scratch/xuanwang/1606799/namenode_data should be specified as a URI in configuration files. Please update hdfs configuration.
+16/02/07 16:08:51 WARN common.Util: Path /scratch/xuanwang/1606799/namenode_data should be specified as a URI in configuration files. Please update hdfs configuration.
+Formatting using clusterid: CID-b3d23568-8298-4b60-b3fd-ad154ea992f0
+16/02/07 16:08:51 INFO namenode.FSNamesystem: No KeyProvider found.
+16/02/07 16:08:51 INFO namenode.FSNamesystem: fsLock is fair:true
+16/02/07 16:08:51 INFO blockmanagement.DatanodeManager: dfs.block.invalidate.limit=1000
+16/02/07 16:08:51 INFO blockmanagement.DatanodeManager: dfs.namenode.datanode.registration.ip-hostname-check=true
+16/02/07 16:08:51 INFO blockmanagement.BlockManager: dfs.namenode.startup.delay.block.deletion.sec is set to 000:00:00:00.000
+16/02/07 16:08:51 INFO blockmanagement.BlockManager: The block deletion will start around 2016 Feb 07 16:08:51
+16/02/07 16:08:51 INFO util.GSet: Computing capacity for map BlocksMap
+16/02/07 16:08:51 INFO util.GSet: VM type       = 64-bit
+16/02/07 16:08:51 INFO util.GSet: 2.0% max memory 958.5 MB = 19.2 MB
+16/02/07 16:08:51 INFO util.GSet: capacity      = 2^21 = 2097152 entries
+16/02/07 16:08:51 INFO blockmanagement.BlockManager: dfs.block.access.token.enable=false
+16/02/07 16:08:51 INFO blockmanagement.BlockManager: defaultReplication         = 3
+16/02/07 16:08:51 INFO blockmanagement.BlockManager: maxReplication             = 512
+16/02/07 16:08:51 INFO blockmanagement.BlockManager: minReplication             = 1
+16/02/07 16:08:51 INFO blockmanagement.BlockManager: maxReplicationStreams      = 2
+16/02/07 16:08:51 INFO blockmanagement.BlockManager: shouldCheckForEnoughRacks  = false
+16/02/07 16:08:51 INFO blockmanagement.BlockManager: replicationRecheckInterval = 3000
+16/02/07 16:08:51 INFO blockmanagement.BlockManager: encryptDataTransfer        = false
+16/02/07 16:08:51 INFO blockmanagement.BlockManager: maxNumBlocksToLog          = 1000
+16/02/07 16:08:51 INFO namenode.FSNamesystem: fsOwner             = xuanwang (auth:SIMPLE)
+16/02/07 16:08:51 INFO namenode.FSNamesystem: supergroup          = supergroup
+16/02/07 16:08:51 INFO namenode.FSNamesystem: isPermissionEnabled = true
+16/02/07 16:08:51 INFO namenode.FSNamesystem: HA Enabled: false
+16/02/07 16:08:51 INFO namenode.FSNamesystem: Append Enabled: true
+16/02/07 16:08:51 INFO util.GSet: Computing capacity for map INodeMap
+16/02/07 16:08:51 INFO util.GSet: VM type       = 64-bit
+16/02/07 16:08:51 INFO util.GSet: 1.0% max memory 958.5 MB = 9.6 MB
+16/02/07 16:08:51 INFO util.GSet: capacity      = 2^20 = 1048576 entries
+16/02/07 16:08:51 INFO namenode.NameNode: Caching file names occuring more than 10 times
+16/02/07 16:08:51 INFO util.GSet: Computing capacity for map cachedBlocks
+16/02/07 16:08:51 INFO util.GSet: VM type       = 64-bit
+16/02/07 16:08:51 INFO util.GSet: 0.25% max memory 958.5 MB = 2.4 MB
+16/02/07 16:08:51 INFO util.GSet: capacity      = 2^18 = 262144 entries
+16/02/07 16:08:51 INFO namenode.FSNamesystem: dfs.namenode.safemode.threshold-pct = 0.9990000128746033
+16/02/07 16:08:51 INFO namenode.FSNamesystem: dfs.namenode.safemode.min.datanodes = 0
+16/02/07 16:08:51 INFO namenode.FSNamesystem: dfs.namenode.safemode.extension     = 30000
+16/02/07 16:08:51 INFO namenode.FSNamesystem: Retry cache on namenode is enabled
+16/02/07 16:08:51 INFO namenode.FSNamesystem: Retry cache will use 0.03 of total heap and retry cache entry expiry time is 600000 millis
+16/02/07 16:08:51 INFO util.GSet: Computing capacity for map NameNodeRetryCache
+16/02/07 16:08:51 INFO util.GSet: VM type       = 64-bit
+16/02/07 16:08:51 INFO util.GSet: 0.029999999329447746% max memory 958.5 MB = 294.5 KB
+16/02/07 16:08:51 INFO util.GSet: capacity      = 2^15 = 32768 entries
+16/02/07 16:08:51 INFO namenode.NNConf: ACLs enabled? false
+16/02/07 16:08:51 INFO namenode.NNConf: XAttrs enabled? true
+16/02/07 16:08:51 INFO namenode.NNConf: Maximum size of an xattr: 16384
+16/02/07 16:08:51 INFO namenode.FSImage: Allocated new BlockPoolId: BP-1415237476-198.202.112.35-1454890131380
+16/02/07 16:08:51 INFO common.Storage: Storage directory /scratch/xuanwang/1606799/namenode_data has been successfully formatted.
+16/02/07 16:08:51 INFO namenode.NNStorageRetentionManager: Going to retain 1 images with txid >= 0
+16/02/07 16:08:51 INFO util.ExitUtil: Exiting with status 0
+16/02/07 16:08:51 INFO namenode.NameNode: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down NameNode at comet-23-01.sdsc.edu/198.202.112.35
+************************************************************/
+myHadoop:  
+myHadoop: Enabling experimental Spark support
+myHadoop: Using SPARK_CONF_DIR=/home/xuanwang/mycluster.conf/spark
+myHadoop:  
+To use Spark, you will want to type the following commands:"
+  source /home/xuanwang/mycluster.conf/spark/spark-env.sh
+  myspark start
+16/02/07 16:08:52 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Starting namenodes on [comet-23-01.ibnet]
+comet-23-01.ibnet: starting namenode, logging to /scratch/xuanwang/1606799/logs/hadoop-xuanwang-namenode-comet-23-01.sdsc.edu.out
+comet-23-01.ibnet: starting datanode, logging to /scratch/xuanwang/1606799/logs/hadoop-xuanwang-datanode-comet-23-01.sdsc.edu.out
+comet-23-04.ibnet: starting datanode, logging to /scratch/xuanwang/1606799/logs/hadoop-xuanwang-datanode-comet-23-04.sdsc.edu.out
+Starting secondary namenodes [comet-23-01.ibnet]
+comet-23-01.ibnet: starting secondarynamenode, logging to /scratch/xuanwang/1606799/logs/hadoop-xuanwang-secondarynamenode-comet-23-01.sdsc.edu.out
+16/02/07 16:09:07 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+mySpark: Using /home/xuanwang/mycluster.conf/spark/slaves as our slaves file
+mySpark: Reading in /home/xuanwang/mycluster.conf/spark/spark-env.sh as our slaves file
+starting org.apache.spark.deploy.master.Master, logging to /scratch/xuanwang/1606799/logs/spark-xuanwang-org.apache.spark.deploy.master.Master-1-comet-23-01.out
+mySpark: Starting worker on comet-23-01.ibnet:
+  /opt/spark/1.5.2/sbin/spark-daemon.sh --config /home/xuanwang/mycluster.conf/spark start org.apache.spark.deploy.worker.Worker 1 spark://comet-23-01.ibnet:7077
+starting org.apache.spark.deploy.worker.Worker, logging to /scratch/xuanwang/1606799/logs/spark-xuanwang-org.apache.spark.deploy.worker.Worker-1-comet-23-01.sdsc.edu.out
+mySpark: Starting worker on comet-23-04.ibnet:
+  /opt/spark/1.5.2/sbin/spark-daemon.sh --config /home/xuanwang/mycluster.conf/spark start org.apache.spark.deploy.worker.Worker 1 spark://comet-23-01.ibnet:7077
+starting org.apache.spark.deploy.worker.Worker, logging to /scratch/xuanwang/1606799/logs/spark-xuanwang-org.apache.spark.deploy.worker.Worker-1-comet-23-04.sdsc.edu.out
+16/02/07 16:09:15 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/02/07 16:09:16 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/02/07 16:09:19 INFO spark.SparkContext: Running Spark version 1.5.2
+16/02/07 16:09:19 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/02/07 16:09:19 INFO spark.SecurityManager: Changing view acls to: xuanwang
+16/02/07 16:09:19 INFO spark.SecurityManager: Changing modify acls to: xuanwang
+16/02/07 16:09:19 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(xuanwang); users with modify permissions: Set(xuanwang)
+16/02/07 16:09:20 INFO slf4j.Slf4jLogger: Slf4jLogger started
+16/02/07 16:09:20 INFO Remoting: Starting remoting
+16/02/07 16:09:20 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@10.22.250.22:60459]
+16/02/07 16:09:20 INFO util.Utils: Successfully started service 'sparkDriver' on port 60459.
+16/02/07 16:09:20 INFO spark.SparkEnv: Registering MapOutputTracker
+16/02/07 16:09:20 INFO spark.SparkEnv: Registering BlockManagerMaster
+16/02/07 16:09:20 INFO storage.DiskBlockManager: Created local directory at /tmp/blockmgr-01984fbb-f120-47d7-823c-5e6aa8437986
+16/02/07 16:09:20 INFO storage.MemoryStore: MemoryStore started with capacity 530.3 MB
+16/02/07 16:09:20 INFO spark.HttpFileServer: HTTP File server directory is /tmp/spark-14004a22-5f70-4466-a53a-a400468d8a7a/httpd-c15293c0-d84d-4b9f-9afe-f8aacb277148
+16/02/07 16:09:20 INFO spark.HttpServer: Starting HTTP Server
+16/02/07 16:09:20 INFO server.Server: jetty-8.y.z-SNAPSHOT
+16/02/07 16:09:20 INFO server.AbstractConnector: Started SocketConnector@0.0.0.0:49332
+16/02/07 16:09:20 INFO util.Utils: Successfully started service 'HTTP file server' on port 49332.
+16/02/07 16:09:20 INFO spark.SparkEnv: Registering OutputCommitCoordinator
+16/02/07 16:09:20 INFO server.Server: jetty-8.y.z-SNAPSHOT
+16/02/07 16:09:20 INFO server.AbstractConnector: Started SelectChannelConnector@0.0.0.0:4040
+16/02/07 16:09:20 INFO util.Utils: Successfully started service 'SparkUI' on port 4040.
+16/02/07 16:09:20 INFO ui.SparkUI: Started SparkUI at http://10.22.250.22:4040
+16/02/07 16:09:20 INFO util.Utils: Copying /home/xuanwang/workspace/CS240A/hw2/pagerank-start/run_pagerank.py to /tmp/spark-14004a22-5f70-4466-a53a-a400468d8a7a/userFiles-e40e374a-f57f-41ad-9284-b249efe7fb58/run_pagerank.py
+16/02/07 16:09:20 INFO spark.SparkContext: Added file file:/home/xuanwang/workspace/CS240A/hw2/pagerank-start/run_pagerank.py at http://10.22.250.22:49332/files/run_pagerank.py with timestamp 1454890160524
+16/02/07 16:09:20 WARN metrics.MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+16/02/07 16:09:20 INFO client.AppClient$ClientEndpoint: Connecting to master spark://comet-23-01.ibnet:7077...
+16/02/07 16:09:20 INFO cluster.SparkDeploySchedulerBackend: Connected to Spark cluster with app ID app-20160207160920-0000
+16/02/07 16:09:20 INFO client.AppClient$ClientEndpoint: Executor added: app-20160207160920-0000/0 on worker-20160207160914-10.22.250.19-37474 (10.22.250.19:37474) with 24 cores
+16/02/07 16:09:20 INFO cluster.SparkDeploySchedulerBackend: Granted executor ID app-20160207160920-0000/0 on hostPort 10.22.250.19:37474 with 24 cores, 1024.0 MB RAM
+16/02/07 16:09:20 INFO client.AppClient$ClientEndpoint: Executor added: app-20160207160920-0000/1 on worker-20160207160912-10.22.250.22-46317 (10.22.250.22:46317) with 24 cores
+16/02/07 16:09:20 INFO cluster.SparkDeploySchedulerBackend: Granted executor ID app-20160207160920-0000/1 on hostPort 10.22.250.22:46317 with 24 cores, 1024.0 MB RAM
+16/02/07 16:09:20 INFO client.AppClient$ClientEndpoint: Executor updated: app-20160207160920-0000/0 is now RUNNING
+16/02/07 16:09:20 INFO client.AppClient$ClientEndpoint: Executor updated: app-20160207160920-0000/1 is now LOADING
+16/02/07 16:09:20 INFO client.AppClient$ClientEndpoint: Executor updated: app-20160207160920-0000/1 is now RUNNING
+16/02/07 16:09:20 INFO client.AppClient$ClientEndpoint: Executor updated: app-20160207160920-0000/0 is now LOADING
+16/02/07 16:09:20 INFO util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 59299.
+16/02/07 16:09:20 INFO netty.NettyBlockTransferService: Server created on 59299
+16/02/07 16:09:20 INFO storage.BlockManagerMaster: Trying to register BlockManager
+16/02/07 16:09:20 INFO storage.BlockManagerMasterEndpoint: Registering block manager 10.22.250.22:59299 with 530.3 MB RAM, BlockManagerId(driver, 10.22.250.22, 59299)
+16/02/07 16:09:20 INFO storage.BlockManagerMaster: Registered BlockManager
+16/02/07 16:09:20 INFO cluster.SparkDeploySchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+16/02/07 16:09:21 INFO storage.MemoryStore: ensureFreeSpace(183320) called with curMem=0, maxMem=556038881
+16/02/07 16:09:21 INFO storage.MemoryStore: Block broadcast_0 stored as values in memory (estimated size 179.0 KB, free 530.1 MB)
+16/02/07 16:09:21 INFO storage.MemoryStore: ensureFreeSpace(17482) called with curMem=183320, maxMem=556038881
+16/02/07 16:09:21 INFO storage.MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 17.1 KB, free 530.1 MB)
+16/02/07 16:09:21 INFO storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on 10.22.250.22:59299 (size: 17.1 KB, free: 530.3 MB)
+16/02/07 16:09:21 INFO spark.SparkContext: Created broadcast 0 from textFile at NativeMethodAccessorImpl.java:-2
+16/02/07 16:09:21 INFO mapred.FileInputFormat: Total input paths to process : 1
+16/02/07 16:09:21 INFO spark.SparkContext: Starting job: count at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:25
+16/02/07 16:09:21 INFO scheduler.DAGScheduler: Registering RDD 3 (reduceByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:75)
+16/02/07 16:09:21 INFO scheduler.DAGScheduler: Got job 0 (count at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:25) with 2 output partitions
+16/02/07 16:09:21 INFO scheduler.DAGScheduler: Final stage: ResultStage 1(count at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:25)
+16/02/07 16:09:21 INFO scheduler.DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
+16/02/07 16:09:21 INFO scheduler.DAGScheduler: Missing parents: List(ShuffleMapStage 0)
+16/02/07 16:09:21 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 0 (PairwiseRDD[3] at reduceByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:75), which has no missing parents
+16/02/07 16:09:21 INFO storage.MemoryStore: ensureFreeSpace(8320) called with curMem=200802, maxMem=556038881
+16/02/07 16:09:21 INFO storage.MemoryStore: Block broadcast_1 stored as values in memory (estimated size 8.1 KB, free 530.1 MB)
+16/02/07 16:09:21 INFO storage.MemoryStore: ensureFreeSpace(5285) called with curMem=209122, maxMem=556038881
+16/02/07 16:09:21 INFO storage.MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 5.2 KB, free 530.1 MB)
+16/02/07 16:09:21 INFO storage.BlockManagerInfo: Added broadcast_1_piece0 in memory on 10.22.250.22:59299 (size: 5.2 KB, free: 530.3 MB)
+16/02/07 16:09:21 INFO spark.SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:21 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 0 (PairwiseRDD[3] at reduceByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:75)
+16/02/07 16:09:21 INFO scheduler.TaskSchedulerImpl: Adding task set 0.0 with 2 tasks
+16/02/07 16:09:22 INFO cluster.SparkDeploySchedulerBackend: Registered executor: AkkaRpcEndpointRef(Actor[akka.tcp://sparkExecutor@10.22.250.22:56305/user/Executor#265382096]) with ID 1
+16/02/07 16:09:22 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, 10.22.250.22, ANY, 2204 bytes)
+16/02/07 16:09:22 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, 10.22.250.22, ANY, 2204 bytes)
+16/02/07 16:09:22 INFO cluster.SparkDeploySchedulerBackend: Registered executor: AkkaRpcEndpointRef(Actor[akka.tcp://sparkExecutor@10.22.250.19:54483/user/Executor#-600082653]) with ID 0
+16/02/07 16:09:22 INFO storage.BlockManagerMasterEndpoint: Registering block manager 10.22.250.22:39918 with 530.3 MB RAM, BlockManagerId(1, 10.22.250.22, 39918)
+16/02/07 16:09:22 INFO storage.BlockManagerMasterEndpoint: Registering block manager 10.22.250.19:41965 with 530.3 MB RAM, BlockManagerId(0, 10.22.250.19, 41965)
+16/02/07 16:09:23 INFO storage.BlockManagerInfo: Added broadcast_1_piece0 in memory on 10.22.250.22:39918 (size: 5.2 KB, free: 530.3 MB)
+16/02/07 16:09:23 INFO storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on 10.22.250.22:39918 (size: 17.1 KB, free: 530.3 MB)
+16/02/07 16:09:24 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 1773 ms on 10.22.250.22 (1/2)
+16/02/07 16:09:24 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 1788 ms on 10.22.250.22 (2/2)
+16/02/07 16:09:24 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+16/02/07 16:09:24 INFO scheduler.DAGScheduler: ShuffleMapStage 0 (reduceByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:75) finished in 2.568 s
+16/02/07 16:09:24 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:24 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:24 INFO scheduler.DAGScheduler: waiting: Set(ResultStage 1)
+16/02/07 16:09:24 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:24 INFO scheduler.DAGScheduler: Missing parents for ResultStage 1: List()
+16/02/07 16:09:24 INFO scheduler.DAGScheduler: Submitting ResultStage 1 (PythonRDD[6] at count at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:25), which is now runnable
+16/02/07 16:09:24 INFO storage.MemoryStore: ensureFreeSpace(6368) called with curMem=214407, maxMem=556038881
+16/02/07 16:09:24 INFO storage.MemoryStore: Block broadcast_2 stored as values in memory (estimated size 6.2 KB, free 530.1 MB)
+16/02/07 16:09:24 INFO storage.MemoryStore: ensureFreeSpace(3991) called with curMem=220775, maxMem=556038881
+16/02/07 16:09:24 INFO storage.MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 3.9 KB, free 530.1 MB)
+16/02/07 16:09:24 INFO storage.BlockManagerInfo: Added broadcast_2_piece0 in memory on 10.22.250.22:59299 (size: 3.9 KB, free: 530.3 MB)
+16/02/07 16:09:24 INFO spark.SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:24 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 1 (PythonRDD[6] at count at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:25)
+16/02/07 16:09:24 INFO scheduler.TaskSchedulerImpl: Adding task set 1.0 with 2 tasks
+16/02/07 16:09:24 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 1.0 (TID 2, 10.22.250.19, PROCESS_LOCAL, 1958 bytes)
+16/02/07 16:09:24 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 1.0 (TID 3, 10.22.250.22, PROCESS_LOCAL, 1958 bytes)
+16/02/07 16:09:24 INFO storage.BlockManagerInfo: Added broadcast_2_piece0 in memory on 10.22.250.22:39918 (size: 3.9 KB, free: 530.3 MB)
+16/02/07 16:09:24 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 10.22.250.22:56305
+16/02/07 16:09:24 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 0 is 148 bytes
+16/02/07 16:09:24 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 1.0 (TID 3) in 70 ms on 10.22.250.22 (1/2)
+16/02/07 16:09:24 INFO storage.BlockManagerInfo: Added broadcast_2_piece0 in memory on 10.22.250.19:41965 (size: 3.9 KB, free: 530.3 MB)
+16/02/07 16:09:24 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 10.22.250.19:54483
+16/02/07 16:09:24 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 1.0 (TID 2) in 578 ms on 10.22.250.19 (2/2)
+16/02/07 16:09:24 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+16/02/07 16:09:24 INFO scheduler.DAGScheduler: ResultStage 1 (count at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:25) finished in 0.580 s
+16/02/07 16:09:24 INFO scheduler.DAGScheduler: Job 0 finished: count at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:25, took 3.216498 s
+16/02/07 16:09:25 INFO spark.SparkContext: Starting job: sortByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:173
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Registering RDD 8 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Registering RDD 12 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Registering RDD 16 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Registering RDD 20 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Registering RDD 24 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Registering RDD 28 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Registering RDD 32 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Registering RDD 36 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Registering RDD 40 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Registering RDD 44 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Registering RDD 48 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Registering RDD 52 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Registering RDD 56 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Registering RDD 60 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Registering RDD 64 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Registering RDD 68 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Registering RDD 72 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Registering RDD 76 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Registering RDD 80 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Registering RDD 84 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Got job 1 (sortByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:173) with 2 output partitions
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Final stage: ResultStage 23(sortByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:173)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Parents of final stage: List(ShuffleMapStage 22)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents: List(ShuffleMapStage 22)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 3 (PairwiseRDD[8] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159), which has no missing parents
+16/02/07 16:09:25 INFO storage.MemoryStore: ensureFreeSpace(8704) called with curMem=224766, maxMem=556038881
+16/02/07 16:09:25 INFO storage.MemoryStore: Block broadcast_3 stored as values in memory (estimated size 8.5 KB, free 530.1 MB)
+16/02/07 16:09:25 INFO storage.MemoryStore: ensureFreeSpace(5552) called with curMem=233470, maxMem=556038881
+16/02/07 16:09:25 INFO storage.MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 5.4 KB, free 530.1 MB)
+16/02/07 16:09:25 INFO storage.BlockManagerInfo: Added broadcast_3_piece0 in memory on 10.22.250.22:59299 (size: 5.4 KB, free: 530.2 MB)
+16/02/07 16:09:25 INFO spark.SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 3 (PairwiseRDD[8] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.TaskSchedulerImpl: Adding task set 3.0 with 2 tasks
+16/02/07 16:09:25 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 3.0 (TID 4, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:25 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 3.0 (TID 5, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:25 INFO storage.BlockManagerInfo: Added broadcast_3_piece0 in memory on 10.22.250.22:39918 (size: 5.4 KB, free: 530.2 MB)
+16/02/07 16:09:25 INFO storage.BlockManagerInfo: Added broadcast_3_piece0 in memory on 10.22.250.19:41965 (size: 5.4 KB, free: 530.3 MB)
+16/02/07 16:09:25 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 3.0 (TID 5) in 123 ms on 10.22.250.22 (1/2)
+16/02/07 16:09:25 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 3.0 (TID 4) in 177 ms on 10.22.250.19 (2/2)
+16/02/07 16:09:25 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: ShuffleMapStage 3 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159) finished in 0.177 s
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 9, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 10, ShuffleMapStage 4, ShuffleMapStage 11, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 5, ShuffleMapStage 20, ShuffleMapStage 6, ShuffleMapStage 21, ShuffleMapStage 7, ShuffleMapStage 22, ShuffleMapStage 14, ShuffleMapStage 8, ResultStage 23)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 15: List(ShuffleMapStage 14)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 9: List(ShuffleMapStage 8)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 16: List(ShuffleMapStage 15)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 17: List(ShuffleMapStage 16)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 18: List(ShuffleMapStage 17)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 10: List(ShuffleMapStage 9)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 4: List()
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 11: List(ShuffleMapStage 10)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 12: List(ShuffleMapStage 11)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 19: List(ShuffleMapStage 18)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 13: List(ShuffleMapStage 12)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 5: List(ShuffleMapStage 4)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 20: List(ShuffleMapStage 19)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 6: List(ShuffleMapStage 5)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 21: List(ShuffleMapStage 20)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 7: List(ShuffleMapStage 6)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 22: List(ShuffleMapStage 21)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 14: List(ShuffleMapStage 13)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 8: List(ShuffleMapStage 7)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ResultStage 23: List(ShuffleMapStage 22)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 4 (PairwiseRDD[12] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159), which is now runnable
+16/02/07 16:09:25 INFO storage.MemoryStore: ensureFreeSpace(8992) called with curMem=239022, maxMem=556038881
+16/02/07 16:09:25 INFO storage.MemoryStore: Block broadcast_4 stored as values in memory (estimated size 8.8 KB, free 530.0 MB)
+16/02/07 16:09:25 INFO storage.MemoryStore: ensureFreeSpace(5766) called with curMem=248014, maxMem=556038881
+16/02/07 16:09:25 INFO storage.MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 5.6 KB, free 530.0 MB)
+16/02/07 16:09:25 INFO storage.BlockManagerInfo: Added broadcast_4_piece0 in memory on 10.22.250.22:59299 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:25 INFO spark.SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 4 (PairwiseRDD[12] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.TaskSchedulerImpl: Adding task set 4.0 with 2 tasks
+16/02/07 16:09:25 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 4.0 (TID 6, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:25 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 4.0 (TID 7, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:25 INFO storage.BlockManagerInfo: Added broadcast_4_piece0 in memory on 10.22.250.22:39918 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:25 INFO storage.BlockManagerInfo: Added broadcast_4_piece0 in memory on 10.22.250.19:41965 (size: 5.6 KB, free: 530.3 MB)
+16/02/07 16:09:25 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 20 to 10.22.250.22:56305
+16/02/07 16:09:25 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 20 is 164 bytes
+16/02/07 16:09:25 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 20 to 10.22.250.19:54483
+16/02/07 16:09:25 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 4.0 (TID 6) in 149 ms on 10.22.250.19 (1/2)
+16/02/07 16:09:25 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 4.0 (TID 7) in 196 ms on 10.22.250.22 (2/2)
+16/02/07 16:09:25 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: ShuffleMapStage 4 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159) finished in 0.197 s
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 9, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 10, ShuffleMapStage 11, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 5, ShuffleMapStage 20, ShuffleMapStage 6, ShuffleMapStage 21, ShuffleMapStage 7, ShuffleMapStage 22, ShuffleMapStage 14, ShuffleMapStage 8, ResultStage 23)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 15: List(ShuffleMapStage 14)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 9: List(ShuffleMapStage 8)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 16: List(ShuffleMapStage 15)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 17: List(ShuffleMapStage 16)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 18: List(ShuffleMapStage 17)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 10: List(ShuffleMapStage 9)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 11: List(ShuffleMapStage 10)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 12: List(ShuffleMapStage 11)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 19: List(ShuffleMapStage 18)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 13: List(ShuffleMapStage 12)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 5: List()
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 20: List(ShuffleMapStage 19)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 6: List(ShuffleMapStage 5)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 21: List(ShuffleMapStage 20)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 7: List(ShuffleMapStage 6)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 22: List(ShuffleMapStage 21)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 14: List(ShuffleMapStage 13)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 8: List(ShuffleMapStage 7)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ResultStage 23: List(ShuffleMapStage 22)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 5 (PairwiseRDD[16] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159), which is now runnable
+16/02/07 16:09:25 INFO storage.MemoryStore: ensureFreeSpace(8992) called with curMem=253780, maxMem=556038881
+16/02/07 16:09:25 INFO storage.MemoryStore: Block broadcast_5 stored as values in memory (estimated size 8.8 KB, free 530.0 MB)
+16/02/07 16:09:25 INFO storage.MemoryStore: ensureFreeSpace(5774) called with curMem=262772, maxMem=556038881
+16/02/07 16:09:25 INFO storage.MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 5.6 KB, free 530.0 MB)
+16/02/07 16:09:25 INFO storage.BlockManagerInfo: Added broadcast_5_piece0 in memory on 10.22.250.22:59299 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:25 INFO spark.SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 5 (PairwiseRDD[16] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.TaskSchedulerImpl: Adding task set 5.0 with 2 tasks
+16/02/07 16:09:25 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 5.0 (TID 8, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:25 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 5.0 (TID 9, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:25 INFO storage.BlockManagerInfo: Added broadcast_5_piece0 in memory on 10.22.250.22:39918 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:25 INFO storage.BlockManagerInfo: Added broadcast_5_piece0 in memory on 10.22.250.19:41965 (size: 5.6 KB, free: 530.3 MB)
+16/02/07 16:09:25 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 19 to 10.22.250.22:56305
+16/02/07 16:09:25 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 19 is 164 bytes
+16/02/07 16:09:25 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 19 to 10.22.250.19:54483
+16/02/07 16:09:25 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 5.0 (TID 9) in 138 ms on 10.22.250.22 (1/2)
+16/02/07 16:09:25 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 5.0 (TID 8) in 146 ms on 10.22.250.19 (2/2)
+16/02/07 16:09:25 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool 
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: ShuffleMapStage 5 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159) finished in 0.147 s
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 9, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 10, ShuffleMapStage 11, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 20, ShuffleMapStage 6, ShuffleMapStage 21, ShuffleMapStage 7, ShuffleMapStage 22, ShuffleMapStage 14, ShuffleMapStage 8, ResultStage 23)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 15: List(ShuffleMapStage 14)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 9: List(ShuffleMapStage 8)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 16: List(ShuffleMapStage 15)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 17: List(ShuffleMapStage 16)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 18: List(ShuffleMapStage 17)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 10: List(ShuffleMapStage 9)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 11: List(ShuffleMapStage 10)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 12: List(ShuffleMapStage 11)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 19: List(ShuffleMapStage 18)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 13: List(ShuffleMapStage 12)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 20: List(ShuffleMapStage 19)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 6: List()
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 21: List(ShuffleMapStage 20)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 7: List(ShuffleMapStage 6)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 22: List(ShuffleMapStage 21)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 14: List(ShuffleMapStage 13)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 8: List(ShuffleMapStage 7)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ResultStage 23: List(ShuffleMapStage 22)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 6 (PairwiseRDD[20] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159), which is now runnable
+16/02/07 16:09:25 INFO storage.MemoryStore: ensureFreeSpace(8992) called with curMem=268546, maxMem=556038881
+16/02/07 16:09:25 INFO storage.MemoryStore: Block broadcast_6 stored as values in memory (estimated size 8.8 KB, free 530.0 MB)
+16/02/07 16:09:25 INFO storage.MemoryStore: ensureFreeSpace(5770) called with curMem=277538, maxMem=556038881
+16/02/07 16:09:25 INFO storage.MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 5.6 KB, free 530.0 MB)
+16/02/07 16:09:25 INFO storage.BlockManagerInfo: Added broadcast_6_piece0 in memory on 10.22.250.22:59299 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:25 INFO spark.SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 6 (PairwiseRDD[20] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.TaskSchedulerImpl: Adding task set 6.0 with 2 tasks
+16/02/07 16:09:25 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 6.0 (TID 10, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:25 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 6.0 (TID 11, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:25 INFO storage.BlockManagerInfo: Added broadcast_6_piece0 in memory on 10.22.250.22:39918 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:25 INFO storage.BlockManagerInfo: Added broadcast_6_piece0 in memory on 10.22.250.19:41965 (size: 5.6 KB, free: 530.3 MB)
+16/02/07 16:09:25 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 18 to 10.22.250.22:56305
+16/02/07 16:09:25 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 18 is 164 bytes
+16/02/07 16:09:25 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 18 to 10.22.250.19:54483
+16/02/07 16:09:25 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 6.0 (TID 11) in 137 ms on 10.22.250.22 (1/2)
+16/02/07 16:09:25 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 6.0 (TID 10) in 144 ms on 10.22.250.19 (2/2)
+16/02/07 16:09:25 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool 
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: ShuffleMapStage 6 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159) finished in 0.144 s
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 9, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 10, ShuffleMapStage 11, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 20, ShuffleMapStage 21, ShuffleMapStage 7, ShuffleMapStage 22, ShuffleMapStage 14, ShuffleMapStage 8, ResultStage 23)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 15: List(ShuffleMapStage 14)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 9: List(ShuffleMapStage 8)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 16: List(ShuffleMapStage 15)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 17: List(ShuffleMapStage 16)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 18: List(ShuffleMapStage 17)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 10: List(ShuffleMapStage 9)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 11: List(ShuffleMapStage 10)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 12: List(ShuffleMapStage 11)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 19: List(ShuffleMapStage 18)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 13: List(ShuffleMapStage 12)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 20: List(ShuffleMapStage 19)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 21: List(ShuffleMapStage 20)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 7: List()
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 22: List(ShuffleMapStage 21)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 14: List(ShuffleMapStage 13)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 8: List(ShuffleMapStage 7)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Missing parents for ResultStage 23: List(ShuffleMapStage 22)
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 7 (PairwiseRDD[24] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159), which is now runnable
+16/02/07 16:09:25 INFO storage.MemoryStore: ensureFreeSpace(8992) called with curMem=283308, maxMem=556038881
+16/02/07 16:09:25 INFO storage.MemoryStore: Block broadcast_7 stored as values in memory (estimated size 8.8 KB, free 530.0 MB)
+16/02/07 16:09:25 INFO storage.MemoryStore: ensureFreeSpace(5774) called with curMem=292300, maxMem=556038881
+16/02/07 16:09:25 INFO storage.MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 5.6 KB, free 530.0 MB)
+16/02/07 16:09:25 INFO storage.BlockManagerInfo: Added broadcast_7_piece0 in memory on 10.22.250.22:59299 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:25 INFO spark.SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:25 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 7 (PairwiseRDD[24] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:25 INFO scheduler.TaskSchedulerImpl: Adding task set 7.0 with 2 tasks
+16/02/07 16:09:25 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 7.0 (TID 12, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:25 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 7.0 (TID 13, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:25 INFO storage.BlockManagerInfo: Added broadcast_7_piece0 in memory on 10.22.250.22:39918 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:25 INFO storage.BlockManagerInfo: Added broadcast_7_piece0 in memory on 10.22.250.19:41965 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:25 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 17 to 10.22.250.22:56305
+16/02/07 16:09:25 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 17 is 164 bytes
+16/02/07 16:09:25 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 17 to 10.22.250.19:54483
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 7.0 (TID 13) in 137 ms on 10.22.250.22 (1/2)
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 7.0 (TID 12) in 145 ms on 10.22.250.19 (2/2)
+16/02/07 16:09:26 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 7.0, whose tasks have all completed, from pool 
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: ShuffleMapStage 7 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159) finished in 0.146 s
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 9, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 10, ShuffleMapStage 11, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 20, ShuffleMapStage 21, ShuffleMapStage 22, ShuffleMapStage 14, ShuffleMapStage 8, ResultStage 23)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 15: List(ShuffleMapStage 14)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 9: List(ShuffleMapStage 8)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 16: List(ShuffleMapStage 15)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 17: List(ShuffleMapStage 16)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 18: List(ShuffleMapStage 17)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 10: List(ShuffleMapStage 9)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 11: List(ShuffleMapStage 10)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 12: List(ShuffleMapStage 11)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 19: List(ShuffleMapStage 18)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 13: List(ShuffleMapStage 12)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 20: List(ShuffleMapStage 19)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 21: List(ShuffleMapStage 20)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 22: List(ShuffleMapStage 21)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 14: List(ShuffleMapStage 13)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 8: List()
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ResultStage 23: List(ShuffleMapStage 22)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 8 (PairwiseRDD[28] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159), which is now runnable
+16/02/07 16:09:26 INFO storage.MemoryStore: ensureFreeSpace(8992) called with curMem=298074, maxMem=556038881
+16/02/07 16:09:26 INFO storage.MemoryStore: Block broadcast_8 stored as values in memory (estimated size 8.8 KB, free 530.0 MB)
+16/02/07 16:09:26 INFO storage.MemoryStore: ensureFreeSpace(5773) called with curMem=307066, maxMem=556038881
+16/02/07 16:09:26 INFO storage.MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 5.6 KB, free 530.0 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Added broadcast_8_piece0 in memory on 10.22.250.22:59299 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO spark.SparkContext: Created broadcast 8 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 8 (PairwiseRDD[28] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:26 INFO scheduler.TaskSchedulerImpl: Adding task set 8.0 with 2 tasks
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 8.0 (TID 14, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 8.0 (TID 15, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Added broadcast_8_piece0 in memory on 10.22.250.22:39918 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Added broadcast_8_piece0 in memory on 10.22.250.19:41965 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 16 to 10.22.250.22:56305
+16/02/07 16:09:26 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 16 is 164 bytes
+16/02/07 16:09:26 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 16 to 10.22.250.19:54483
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 8.0 (TID 15) in 137 ms on 10.22.250.22 (1/2)
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 8.0 (TID 14) in 143 ms on 10.22.250.19 (2/2)
+16/02/07 16:09:26 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 8.0, whose tasks have all completed, from pool 
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: ShuffleMapStage 8 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159) finished in 0.143 s
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 9, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 10, ShuffleMapStage 11, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 20, ShuffleMapStage 21, ShuffleMapStage 22, ShuffleMapStage 14, ResultStage 23)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 15: List(ShuffleMapStage 14)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 9: List()
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 16: List(ShuffleMapStage 15)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 17: List(ShuffleMapStage 16)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 18: List(ShuffleMapStage 17)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 10: List(ShuffleMapStage 9)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 11: List(ShuffleMapStage 10)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 12: List(ShuffleMapStage 11)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 19: List(ShuffleMapStage 18)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 13: List(ShuffleMapStage 12)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 20: List(ShuffleMapStage 19)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 21: List(ShuffleMapStage 20)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 22: List(ShuffleMapStage 21)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 14: List(ShuffleMapStage 13)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ResultStage 23: List(ShuffleMapStage 22)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 9 (PairwiseRDD[32] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159), which is now runnable
+16/02/07 16:09:26 INFO storage.MemoryStore: ensureFreeSpace(8992) called with curMem=312839, maxMem=556038881
+16/02/07 16:09:26 INFO storage.MemoryStore: Block broadcast_9 stored as values in memory (estimated size 8.8 KB, free 530.0 MB)
+16/02/07 16:09:26 INFO storage.MemoryStore: ensureFreeSpace(5771) called with curMem=321831, maxMem=556038881
+16/02/07 16:09:26 INFO storage.MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 5.6 KB, free 530.0 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Added broadcast_9_piece0 in memory on 10.22.250.22:59299 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO spark.SparkContext: Created broadcast 9 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 9 (PairwiseRDD[32] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:26 INFO scheduler.TaskSchedulerImpl: Adding task set 9.0 with 2 tasks
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 9.0 (TID 16, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 9.0 (TID 17, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Added broadcast_9_piece0 in memory on 10.22.250.22:39918 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Added broadcast_9_piece0 in memory on 10.22.250.19:41965 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 15 to 10.22.250.22:56305
+16/02/07 16:09:26 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 15 is 164 bytes
+16/02/07 16:09:26 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 15 to 10.22.250.19:54483
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 9.0 (TID 17) in 137 ms on 10.22.250.19 (1/2)
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 9.0 (TID 16) in 143 ms on 10.22.250.22 (2/2)
+16/02/07 16:09:26 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 9.0, whose tasks have all completed, from pool 
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: ShuffleMapStage 9 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159) finished in 0.144 s
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 10, ShuffleMapStage 11, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 20, ShuffleMapStage 21, ShuffleMapStage 22, ShuffleMapStage 14, ResultStage 23)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 15: List(ShuffleMapStage 14)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 16: List(ShuffleMapStage 15)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 17: List(ShuffleMapStage 16)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 18: List(ShuffleMapStage 17)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 10: List()
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 11: List(ShuffleMapStage 10)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 12: List(ShuffleMapStage 11)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 19: List(ShuffleMapStage 18)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 13: List(ShuffleMapStage 12)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 20: List(ShuffleMapStage 19)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 21: List(ShuffleMapStage 20)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 22: List(ShuffleMapStage 21)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 14: List(ShuffleMapStage 13)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ResultStage 23: List(ShuffleMapStage 22)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 10 (PairwiseRDD[36] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159), which is now runnable
+16/02/07 16:09:26 INFO storage.MemoryStore: ensureFreeSpace(8992) called with curMem=327602, maxMem=556038881
+16/02/07 16:09:26 INFO storage.MemoryStore: Block broadcast_10 stored as values in memory (estimated size 8.8 KB, free 530.0 MB)
+16/02/07 16:09:26 INFO storage.MemoryStore: ensureFreeSpace(5775) called with curMem=336594, maxMem=556038881
+16/02/07 16:09:26 INFO storage.MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 5.6 KB, free 530.0 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Added broadcast_10_piece0 in memory on 10.22.250.22:59299 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO spark.SparkContext: Created broadcast 10 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 10 (PairwiseRDD[36] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:26 INFO scheduler.TaskSchedulerImpl: Adding task set 10.0 with 2 tasks
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 10.0 (TID 18, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 10.0 (TID 19, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Added broadcast_10_piece0 in memory on 10.22.250.22:39918 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Added broadcast_10_piece0 in memory on 10.22.250.19:41965 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_8_piece0 on 10.22.250.22:59299 in memory (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_8_piece0 on 10.22.250.22:39918 in memory (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_8_piece0 on 10.22.250.19:41965 in memory (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 14 to 10.22.250.22:56305
+16/02/07 16:09:26 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 14 is 162 bytes
+16/02/07 16:09:26 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 14 to 10.22.250.19:54483
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_7_piece0 on 10.22.250.22:59299 in memory (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_7_piece0 on 10.22.250.22:39918 in memory (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_7_piece0 on 10.22.250.19:41965 in memory (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_6_piece0 on 10.22.250.22:59299 in memory (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_6_piece0 on 10.22.250.22:39918 in memory (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_6_piece0 on 10.22.250.19:41965 in memory (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_5_piece0 on 10.22.250.22:59299 in memory (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_5_piece0 on 10.22.250.22:39918 in memory (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_5_piece0 on 10.22.250.19:41965 in memory (size: 5.6 KB, free: 530.3 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_4_piece0 on 10.22.250.22:59299 in memory (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_4_piece0 on 10.22.250.22:39918 in memory (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_4_piece0 on 10.22.250.19:41965 in memory (size: 5.6 KB, free: 530.3 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_3_piece0 on 10.22.250.22:59299 in memory (size: 5.4 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_3_piece0 on 10.22.250.22:39918 in memory (size: 5.4 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_3_piece0 on 10.22.250.19:41965 in memory (size: 5.4 KB, free: 530.3 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_2_piece0 on 10.22.250.22:59299 in memory (size: 3.9 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_2_piece0 on 10.22.250.22:39918 in memory (size: 3.9 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_2_piece0 on 10.22.250.19:41965 in memory (size: 3.9 KB, free: 530.3 MB)
+16/02/07 16:09:26 INFO spark.ContextCleaner: Cleaned accumulator 3
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_1_piece0 on 10.22.250.22:59299 in memory (size: 5.2 KB, free: 530.3 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Removed broadcast_1_piece0 on 10.22.250.22:39918 in memory (size: 5.2 KB, free: 530.3 MB)
+16/02/07 16:09:26 INFO spark.ContextCleaner: Cleaned accumulator 2
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 10.0 (TID 19) in 149 ms on 10.22.250.19 (1/2)
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 10.0 (TID 18) in 155 ms on 10.22.250.22 (2/2)
+16/02/07 16:09:26 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 10.0, whose tasks have all completed, from pool 
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: ShuffleMapStage 10 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159) finished in 0.155 s
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 11, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 20, ShuffleMapStage 21, ShuffleMapStage 22, ShuffleMapStage 14, ResultStage 23)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 15: List(ShuffleMapStage 14)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 16: List(ShuffleMapStage 15)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 17: List(ShuffleMapStage 16)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 18: List(ShuffleMapStage 17)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 11: List()
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 12: List(ShuffleMapStage 11)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 19: List(ShuffleMapStage 18)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 13: List(ShuffleMapStage 12)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 20: List(ShuffleMapStage 19)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 21: List(ShuffleMapStage 20)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 22: List(ShuffleMapStage 21)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 14: List(ShuffleMapStage 13)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ResultStage 23: List(ShuffleMapStage 22)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 11 (PairwiseRDD[40] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159), which is now runnable
+16/02/07 16:09:26 INFO storage.MemoryStore: ensureFreeSpace(8992) called with curMem=230332, maxMem=556038881
+16/02/07 16:09:26 INFO storage.MemoryStore: Block broadcast_11 stored as values in memory (estimated size 8.8 KB, free 530.1 MB)
+16/02/07 16:09:26 INFO storage.MemoryStore: ensureFreeSpace(5774) called with curMem=239324, maxMem=556038881
+16/02/07 16:09:26 INFO storage.MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 5.6 KB, free 530.0 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Added broadcast_11_piece0 in memory on 10.22.250.22:59299 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO spark.SparkContext: Created broadcast 11 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 11 (PairwiseRDD[40] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:26 INFO scheduler.TaskSchedulerImpl: Adding task set 11.0 with 2 tasks
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 11.0 (TID 20, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 11.0 (TID 21, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Added broadcast_11_piece0 in memory on 10.22.250.22:39918 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Added broadcast_11_piece0 in memory on 10.22.250.19:41965 (size: 5.6 KB, free: 530.3 MB)
+16/02/07 16:09:26 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 13 to 10.22.250.22:56305
+16/02/07 16:09:26 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 13 is 162 bytes
+16/02/07 16:09:26 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 13 to 10.22.250.19:54483
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 11.0 (TID 21) in 136 ms on 10.22.250.19 (1/2)
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 11.0 (TID 20) in 140 ms on 10.22.250.22 (2/2)
+16/02/07 16:09:26 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 11.0, whose tasks have all completed, from pool 
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: ShuffleMapStage 11 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159) finished in 0.141 s
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 20, ShuffleMapStage 21, ShuffleMapStage 22, ShuffleMapStage 14, ResultStage 23)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 15: List(ShuffleMapStage 14)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 16: List(ShuffleMapStage 15)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 17: List(ShuffleMapStage 16)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 18: List(ShuffleMapStage 17)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 12: List()
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 19: List(ShuffleMapStage 18)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 13: List(ShuffleMapStage 12)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 20: List(ShuffleMapStage 19)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 21: List(ShuffleMapStage 20)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 22: List(ShuffleMapStage 21)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 14: List(ShuffleMapStage 13)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ResultStage 23: List(ShuffleMapStage 22)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 12 (PairwiseRDD[44] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159), which is now runnable
+16/02/07 16:09:26 INFO storage.MemoryStore: ensureFreeSpace(8992) called with curMem=245098, maxMem=556038881
+16/02/07 16:09:26 INFO storage.MemoryStore: Block broadcast_12 stored as values in memory (estimated size 8.8 KB, free 530.0 MB)
+16/02/07 16:09:26 INFO storage.MemoryStore: ensureFreeSpace(5771) called with curMem=254090, maxMem=556038881
+16/02/07 16:09:26 INFO storage.MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 5.6 KB, free 530.0 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Added broadcast_12_piece0 in memory on 10.22.250.22:59299 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO spark.SparkContext: Created broadcast 12 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 12 (PairwiseRDD[44] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:26 INFO scheduler.TaskSchedulerImpl: Adding task set 12.0 with 2 tasks
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 12.0 (TID 22, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 12.0 (TID 23, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Added broadcast_12_piece0 in memory on 10.22.250.22:39918 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Added broadcast_12_piece0 in memory on 10.22.250.19:41965 (size: 5.6 KB, free: 530.3 MB)
+16/02/07 16:09:26 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 12 to 10.22.250.22:56305
+16/02/07 16:09:26 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 12 is 162 bytes
+16/02/07 16:09:26 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 12 to 10.22.250.19:54483
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 12.0 (TID 23) in 135 ms on 10.22.250.19 (1/2)
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 12.0 (TID 22) in 143 ms on 10.22.250.22 (2/2)
+16/02/07 16:09:26 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 12.0, whose tasks have all completed, from pool 
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: ShuffleMapStage 12 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159) finished in 0.144 s
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 20, ShuffleMapStage 21, ShuffleMapStage 22, ShuffleMapStage 14, ResultStage 23)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 15: List(ShuffleMapStage 14)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 16: List(ShuffleMapStage 15)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 17: List(ShuffleMapStage 16)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 18: List(ShuffleMapStage 17)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 19: List(ShuffleMapStage 18)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 13: List()
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 20: List(ShuffleMapStage 19)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 21: List(ShuffleMapStage 20)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 22: List(ShuffleMapStage 21)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 14: List(ShuffleMapStage 13)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Missing parents for ResultStage 23: List(ShuffleMapStage 22)
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 13 (PairwiseRDD[48] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159), which is now runnable
+16/02/07 16:09:26 INFO storage.MemoryStore: ensureFreeSpace(8992) called with curMem=259861, maxMem=556038881
+16/02/07 16:09:26 INFO storage.MemoryStore: Block broadcast_13 stored as values in memory (estimated size 8.8 KB, free 530.0 MB)
+16/02/07 16:09:26 INFO storage.MemoryStore: ensureFreeSpace(5774) called with curMem=268853, maxMem=556038881
+16/02/07 16:09:26 INFO storage.MemoryStore: Block broadcast_13_piece0 stored as bytes in memory (estimated size 5.6 KB, free 530.0 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Added broadcast_13_piece0 in memory on 10.22.250.22:59299 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO spark.SparkContext: Created broadcast 13 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:26 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 13 (PairwiseRDD[48] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:26 INFO scheduler.TaskSchedulerImpl: Adding task set 13.0 with 2 tasks
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 13.0 (TID 24, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:26 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 13.0 (TID 25, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Added broadcast_13_piece0 in memory on 10.22.250.22:39918 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:26 INFO storage.BlockManagerInfo: Added broadcast_13_piece0 in memory on 10.22.250.19:41965 (size: 5.6 KB, free: 530.3 MB)
+16/02/07 16:09:26 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 11 to 10.22.250.22:56305
+16/02/07 16:09:26 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 11 is 162 bytes
+16/02/07 16:09:26 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 11 to 10.22.250.19:54483
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 13.0 (TID 25) in 140 ms on 10.22.250.22 (1/2)
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 13.0 (TID 24) in 143 ms on 10.22.250.19 (2/2)
+16/02/07 16:09:27 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 13.0, whose tasks have all completed, from pool 
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: ShuffleMapStage 13 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159) finished in 0.143 s
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 19, ShuffleMapStage 20, ShuffleMapStage 21, ShuffleMapStage 22, ShuffleMapStage 14, ResultStage 23)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 15: List(ShuffleMapStage 14)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 16: List(ShuffleMapStage 15)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 17: List(ShuffleMapStage 16)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 18: List(ShuffleMapStage 17)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 19: List(ShuffleMapStage 18)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 20: List(ShuffleMapStage 19)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 21: List(ShuffleMapStage 20)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 22: List(ShuffleMapStage 21)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 14: List()
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ResultStage 23: List(ShuffleMapStage 22)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 14 (PairwiseRDD[52] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159), which is now runnable
+16/02/07 16:09:27 INFO storage.MemoryStore: ensureFreeSpace(8992) called with curMem=274627, maxMem=556038881
+16/02/07 16:09:27 INFO storage.MemoryStore: Block broadcast_14 stored as values in memory (estimated size 8.8 KB, free 530.0 MB)
+16/02/07 16:09:27 INFO storage.MemoryStore: ensureFreeSpace(5774) called with curMem=283619, maxMem=556038881
+16/02/07 16:09:27 INFO storage.MemoryStore: Block broadcast_14_piece0 stored as bytes in memory (estimated size 5.6 KB, free 530.0 MB)
+16/02/07 16:09:27 INFO storage.BlockManagerInfo: Added broadcast_14_piece0 in memory on 10.22.250.22:59299 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:27 INFO spark.SparkContext: Created broadcast 14 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 14 (PairwiseRDD[52] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:27 INFO scheduler.TaskSchedulerImpl: Adding task set 14.0 with 2 tasks
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 14.0 (TID 26, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 14.0 (TID 27, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:27 INFO storage.BlockManagerInfo: Added broadcast_14_piece0 in memory on 10.22.250.22:39918 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:27 INFO storage.BlockManagerInfo: Added broadcast_14_piece0 in memory on 10.22.250.19:41965 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:27 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 10 to 10.22.250.22:56305
+16/02/07 16:09:27 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 10 is 164 bytes
+16/02/07 16:09:27 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 10 to 10.22.250.19:54483
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 14.0 (TID 27) in 136 ms on 10.22.250.22 (1/2)
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 14.0 (TID 26) in 141 ms on 10.22.250.19 (2/2)
+16/02/07 16:09:27 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 14.0, whose tasks have all completed, from pool 
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: ShuffleMapStage 14 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159) finished in 0.141 s
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 19, ShuffleMapStage 20, ShuffleMapStage 21, ShuffleMapStage 22, ResultStage 23)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 15: List()
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 16: List(ShuffleMapStage 15)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 17: List(ShuffleMapStage 16)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 18: List(ShuffleMapStage 17)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 19: List(ShuffleMapStage 18)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 20: List(ShuffleMapStage 19)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 21: List(ShuffleMapStage 20)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 22: List(ShuffleMapStage 21)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ResultStage 23: List(ShuffleMapStage 22)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 15 (PairwiseRDD[56] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159), which is now runnable
+16/02/07 16:09:27 INFO storage.MemoryStore: ensureFreeSpace(8992) called with curMem=289393, maxMem=556038881
+16/02/07 16:09:27 INFO storage.MemoryStore: Block broadcast_15 stored as values in memory (estimated size 8.8 KB, free 530.0 MB)
+16/02/07 16:09:27 INFO storage.MemoryStore: ensureFreeSpace(5772) called with curMem=298385, maxMem=556038881
+16/02/07 16:09:27 INFO storage.MemoryStore: Block broadcast_15_piece0 stored as bytes in memory (estimated size 5.6 KB, free 530.0 MB)
+16/02/07 16:09:27 INFO storage.BlockManagerInfo: Added broadcast_15_piece0 in memory on 10.22.250.22:59299 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:27 INFO spark.SparkContext: Created broadcast 15 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 15 (PairwiseRDD[56] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:27 INFO scheduler.TaskSchedulerImpl: Adding task set 15.0 with 2 tasks
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 15.0 (TID 28, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 15.0 (TID 29, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:27 INFO storage.BlockManagerInfo: Added broadcast_15_piece0 in memory on 10.22.250.22:39918 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:27 INFO storage.BlockManagerInfo: Added broadcast_15_piece0 in memory on 10.22.250.19:41965 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:27 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 9 to 10.22.250.22:56305
+16/02/07 16:09:27 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 9 is 164 bytes
+16/02/07 16:09:27 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 9 to 10.22.250.19:54483
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 15.0 (TID 29) in 135 ms on 10.22.250.22 (1/2)
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 15.0 (TID 28) in 180 ms on 10.22.250.19 (2/2)
+16/02/07 16:09:27 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 15.0, whose tasks have all completed, from pool 
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: ShuffleMapStage 15 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159) finished in 0.181 s
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: waiting: Set(ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 19, ShuffleMapStage 20, ShuffleMapStage 21, ShuffleMapStage 22, ResultStage 23)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 16: List()
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 17: List(ShuffleMapStage 16)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 18: List(ShuffleMapStage 17)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 19: List(ShuffleMapStage 18)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 20: List(ShuffleMapStage 19)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 21: List(ShuffleMapStage 20)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 22: List(ShuffleMapStage 21)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ResultStage 23: List(ShuffleMapStage 22)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 16 (PairwiseRDD[60] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159), which is now runnable
+16/02/07 16:09:27 INFO storage.MemoryStore: ensureFreeSpace(8992) called with curMem=304157, maxMem=556038881
+16/02/07 16:09:27 INFO storage.MemoryStore: Block broadcast_16 stored as values in memory (estimated size 8.8 KB, free 530.0 MB)
+16/02/07 16:09:27 INFO storage.MemoryStore: ensureFreeSpace(5771) called with curMem=313149, maxMem=556038881
+16/02/07 16:09:27 INFO storage.MemoryStore: Block broadcast_16_piece0 stored as bytes in memory (estimated size 5.6 KB, free 530.0 MB)
+16/02/07 16:09:27 INFO storage.BlockManagerInfo: Added broadcast_16_piece0 in memory on 10.22.250.22:59299 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:27 INFO spark.SparkContext: Created broadcast 16 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 16 (PairwiseRDD[60] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:27 INFO scheduler.TaskSchedulerImpl: Adding task set 16.0 with 2 tasks
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 16.0 (TID 30, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 16.0 (TID 31, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:27 INFO storage.BlockManagerInfo: Added broadcast_16_piece0 in memory on 10.22.250.22:39918 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:27 INFO storage.BlockManagerInfo: Added broadcast_16_piece0 in memory on 10.22.250.19:41965 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:27 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 8 to 10.22.250.22:56305
+16/02/07 16:09:27 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 8 is 164 bytes
+16/02/07 16:09:27 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 8 to 10.22.250.19:54483
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 16.0 (TID 30) in 143 ms on 10.22.250.22 (1/2)
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 16.0 (TID 31) in 173 ms on 10.22.250.19 (2/2)
+16/02/07 16:09:27 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 16.0, whose tasks have all completed, from pool 
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: ShuffleMapStage 16 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159) finished in 0.173 s
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: waiting: Set(ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 19, ShuffleMapStage 20, ShuffleMapStage 21, ShuffleMapStage 22, ResultStage 23)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 17: List()
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 18: List(ShuffleMapStage 17)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 19: List(ShuffleMapStage 18)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 20: List(ShuffleMapStage 19)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 21: List(ShuffleMapStage 20)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 22: List(ShuffleMapStage 21)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ResultStage 23: List(ShuffleMapStage 22)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 17 (PairwiseRDD[64] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159), which is now runnable
+16/02/07 16:09:27 INFO storage.MemoryStore: ensureFreeSpace(8992) called with curMem=318920, maxMem=556038881
+16/02/07 16:09:27 INFO storage.MemoryStore: Block broadcast_17 stored as values in memory (estimated size 8.8 KB, free 530.0 MB)
+16/02/07 16:09:27 INFO storage.MemoryStore: ensureFreeSpace(5764) called with curMem=327912, maxMem=556038881
+16/02/07 16:09:27 INFO storage.MemoryStore: Block broadcast_17_piece0 stored as bytes in memory (estimated size 5.6 KB, free 530.0 MB)
+16/02/07 16:09:27 INFO storage.BlockManagerInfo: Added broadcast_17_piece0 in memory on 10.22.250.22:59299 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:27 INFO spark.SparkContext: Created broadcast 17 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 17 (PairwiseRDD[64] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:27 INFO scheduler.TaskSchedulerImpl: Adding task set 17.0 with 2 tasks
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 17.0 (TID 32, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 17.0 (TID 33, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:27 INFO storage.BlockManagerInfo: Added broadcast_17_piece0 in memory on 10.22.250.22:39918 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:27 INFO storage.BlockManagerInfo: Added broadcast_17_piece0 in memory on 10.22.250.19:41965 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:27 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 7 to 10.22.250.22:56305
+16/02/07 16:09:27 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 7 is 162 bytes
+16/02/07 16:09:27 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 7 to 10.22.250.19:54483
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 17.0 (TID 33) in 138 ms on 10.22.250.22 (1/2)
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 17.0 (TID 32) in 146 ms on 10.22.250.19 (2/2)
+16/02/07 16:09:27 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 17.0, whose tasks have all completed, from pool 
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: ShuffleMapStage 17 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159) finished in 0.147 s
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: waiting: Set(ShuffleMapStage 18, ShuffleMapStage 19, ShuffleMapStage 20, ShuffleMapStage 21, ShuffleMapStage 22, ResultStage 23)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 18: List()
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 19: List(ShuffleMapStage 18)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 20: List(ShuffleMapStage 19)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 21: List(ShuffleMapStage 20)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 22: List(ShuffleMapStage 21)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ResultStage 23: List(ShuffleMapStage 22)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 18 (PairwiseRDD[68] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159), which is now runnable
+16/02/07 16:09:27 INFO storage.MemoryStore: ensureFreeSpace(8992) called with curMem=333676, maxMem=556038881
+16/02/07 16:09:27 INFO storage.MemoryStore: Block broadcast_18 stored as values in memory (estimated size 8.8 KB, free 530.0 MB)
+16/02/07 16:09:27 INFO storage.MemoryStore: ensureFreeSpace(5774) called with curMem=342668, maxMem=556038881
+16/02/07 16:09:27 INFO storage.MemoryStore: Block broadcast_18_piece0 stored as bytes in memory (estimated size 5.6 KB, free 529.9 MB)
+16/02/07 16:09:27 INFO storage.BlockManagerInfo: Added broadcast_18_piece0 in memory on 10.22.250.22:59299 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:27 INFO spark.SparkContext: Created broadcast 18 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 18 (PairwiseRDD[68] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:27 INFO scheduler.TaskSchedulerImpl: Adding task set 18.0 with 2 tasks
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 18.0 (TID 34, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 18.0 (TID 35, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:27 INFO storage.BlockManagerInfo: Added broadcast_18_piece0 in memory on 10.22.250.22:39918 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:27 INFO storage.BlockManagerInfo: Added broadcast_18_piece0 in memory on 10.22.250.19:41965 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:27 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 6 to 10.22.250.22:56305
+16/02/07 16:09:27 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 6 is 164 bytes
+16/02/07 16:09:27 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 6 to 10.22.250.19:54483
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 18.0 (TID 35) in 133 ms on 10.22.250.22 (1/2)
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 18.0 (TID 34) in 181 ms on 10.22.250.19 (2/2)
+16/02/07 16:09:27 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 18.0, whose tasks have all completed, from pool 
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: ShuffleMapStage 18 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159) finished in 0.181 s
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: waiting: Set(ShuffleMapStage 19, ShuffleMapStage 20, ShuffleMapStage 21, ShuffleMapStage 22, ResultStage 23)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 19: List()
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 20: List(ShuffleMapStage 19)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 21: List(ShuffleMapStage 20)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 22: List(ShuffleMapStage 21)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Missing parents for ResultStage 23: List(ShuffleMapStage 22)
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 19 (PairwiseRDD[72] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159), which is now runnable
+16/02/07 16:09:27 INFO storage.MemoryStore: ensureFreeSpace(8992) called with curMem=348442, maxMem=556038881
+16/02/07 16:09:27 INFO storage.MemoryStore: Block broadcast_19 stored as values in memory (estimated size 8.8 KB, free 529.9 MB)
+16/02/07 16:09:27 INFO storage.MemoryStore: ensureFreeSpace(5774) called with curMem=357434, maxMem=556038881
+16/02/07 16:09:27 INFO storage.MemoryStore: Block broadcast_19_piece0 stored as bytes in memory (estimated size 5.6 KB, free 529.9 MB)
+16/02/07 16:09:27 INFO storage.BlockManagerInfo: Added broadcast_19_piece0 in memory on 10.22.250.22:59299 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:27 INFO spark.SparkContext: Created broadcast 19 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:27 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 19 (PairwiseRDD[72] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:27 INFO scheduler.TaskSchedulerImpl: Adding task set 19.0 with 2 tasks
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 19.0 (TID 36, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:27 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 19.0 (TID 37, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:27 INFO storage.BlockManagerInfo: Added broadcast_19_piece0 in memory on 10.22.250.22:39918 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:27 INFO storage.BlockManagerInfo: Added broadcast_19_piece0 in memory on 10.22.250.19:41965 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:27 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 5 to 10.22.250.22:56305
+16/02/07 16:09:27 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 5 is 164 bytes
+16/02/07 16:09:27 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 5 to 10.22.250.19:54483
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 19.0 (TID 37) in 135 ms on 10.22.250.22 (1/2)
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 19.0 (TID 36) in 180 ms on 10.22.250.19 (2/2)
+16/02/07 16:09:28 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 19.0, whose tasks have all completed, from pool 
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: ShuffleMapStage 19 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159) finished in 0.180 s
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: waiting: Set(ShuffleMapStage 20, ShuffleMapStage 21, ShuffleMapStage 22, ResultStage 23)
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 20: List()
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 21: List(ShuffleMapStage 20)
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 22: List(ShuffleMapStage 21)
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Missing parents for ResultStage 23: List(ShuffleMapStage 22)
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 20 (PairwiseRDD[76] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159), which is now runnable
+16/02/07 16:09:28 INFO storage.MemoryStore: ensureFreeSpace(8992) called with curMem=363208, maxMem=556038881
+16/02/07 16:09:28 INFO storage.MemoryStore: Block broadcast_20 stored as values in memory (estimated size 8.8 KB, free 529.9 MB)
+16/02/07 16:09:28 INFO storage.MemoryStore: ensureFreeSpace(5775) called with curMem=372200, maxMem=556038881
+16/02/07 16:09:28 INFO storage.MemoryStore: Block broadcast_20_piece0 stored as bytes in memory (estimated size 5.6 KB, free 529.9 MB)
+16/02/07 16:09:28 INFO storage.BlockManagerInfo: Added broadcast_20_piece0 in memory on 10.22.250.22:59299 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:28 INFO spark.SparkContext: Created broadcast 20 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 20 (PairwiseRDD[76] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:28 INFO scheduler.TaskSchedulerImpl: Adding task set 20.0 with 2 tasks
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 20.0 (TID 38, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 20.0 (TID 39, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:28 INFO storage.BlockManagerInfo: Added broadcast_20_piece0 in memory on 10.22.250.22:39918 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:28 INFO storage.BlockManagerInfo: Added broadcast_20_piece0 in memory on 10.22.250.19:41965 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 4 to 10.22.250.22:56305
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 4 is 164 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 4 to 10.22.250.19:54483
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 20.0 (TID 38) in 142 ms on 10.22.250.22 (1/2)
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 20.0 (TID 39) in 173 ms on 10.22.250.19 (2/2)
+16/02/07 16:09:28 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 20.0, whose tasks have all completed, from pool 
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: ShuffleMapStage 20 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159) finished in 0.174 s
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: waiting: Set(ShuffleMapStage 21, ShuffleMapStage 22, ResultStage 23)
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 21: List()
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 22: List(ShuffleMapStage 21)
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Missing parents for ResultStage 23: List(ShuffleMapStage 22)
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 21 (PairwiseRDD[80] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159), which is now runnable
+16/02/07 16:09:28 INFO storage.MemoryStore: ensureFreeSpace(8992) called with curMem=377975, maxMem=556038881
+16/02/07 16:09:28 INFO storage.MemoryStore: Block broadcast_21 stored as values in memory (estimated size 8.8 KB, free 529.9 MB)
+16/02/07 16:09:28 INFO storage.MemoryStore: ensureFreeSpace(5772) called with curMem=386967, maxMem=556038881
+16/02/07 16:09:28 INFO storage.MemoryStore: Block broadcast_21_piece0 stored as bytes in memory (estimated size 5.6 KB, free 529.9 MB)
+16/02/07 16:09:28 INFO storage.BlockManagerInfo: Added broadcast_21_piece0 in memory on 10.22.250.22:59299 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:28 INFO spark.SparkContext: Created broadcast 21 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 21 (PairwiseRDD[80] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:28 INFO scheduler.TaskSchedulerImpl: Adding task set 21.0 with 2 tasks
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 21.0 (TID 40, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 21.0 (TID 41, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:28 INFO storage.BlockManagerInfo: Added broadcast_21_piece0 in memory on 10.22.250.22:39918 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:28 INFO storage.BlockManagerInfo: Added broadcast_21_piece0 in memory on 10.22.250.19:41965 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 3 to 10.22.250.22:56305
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 3 is 162 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 3 to 10.22.250.19:54483
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 21.0 (TID 40) in 144 ms on 10.22.250.22 (1/2)
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 21.0 (TID 41) in 173 ms on 10.22.250.19 (2/2)
+16/02/07 16:09:28 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 21.0, whose tasks have all completed, from pool 
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: ShuffleMapStage 21 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159) finished in 0.174 s
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: waiting: Set(ShuffleMapStage 22, ResultStage 23)
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Missing parents for ShuffleMapStage 22: List()
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Missing parents for ResultStage 23: List(ShuffleMapStage 22)
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 22 (PairwiseRDD[84] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159), which is now runnable
+16/02/07 16:09:28 INFO storage.MemoryStore: ensureFreeSpace(8992) called with curMem=392739, maxMem=556038881
+16/02/07 16:09:28 INFO storage.MemoryStore: Block broadcast_22 stored as values in memory (estimated size 8.8 KB, free 529.9 MB)
+16/02/07 16:09:28 INFO storage.MemoryStore: ensureFreeSpace(5761) called with curMem=401731, maxMem=556038881
+16/02/07 16:09:28 INFO storage.MemoryStore: Block broadcast_22_piece0 stored as bytes in memory (estimated size 5.6 KB, free 529.9 MB)
+16/02/07 16:09:28 INFO storage.BlockManagerInfo: Added broadcast_22_piece0 in memory on 10.22.250.22:59299 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:28 INFO spark.SparkContext: Created broadcast 22 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 22 (PairwiseRDD[84] at groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159)
+16/02/07 16:09:28 INFO scheduler.TaskSchedulerImpl: Adding task set 22.0 with 2 tasks
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 22.0 (TID 42, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 22.0 (TID 43, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:28 INFO storage.BlockManagerInfo: Added broadcast_22_piece0 in memory on 10.22.250.22:39918 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:28 INFO storage.BlockManagerInfo: Added broadcast_22_piece0 in memory on 10.22.250.19:41965 (size: 5.6 KB, free: 530.2 MB)
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 2 to 10.22.250.22:56305
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 2 is 162 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 2 to 10.22.250.19:54483
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 22.0 (TID 43) in 142 ms on 10.22.250.22 (1/2)
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 22.0 (TID 42) in 178 ms on 10.22.250.19 (2/2)
+16/02/07 16:09:28 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 22.0, whose tasks have all completed, from pool 
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: ShuffleMapStage 22 (groupByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:159) finished in 0.179 s
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: waiting: Set(ResultStage 23)
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Missing parents for ResultStage 23: List()
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Submitting ResultStage 23 (PythonRDD[87] at sortByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:173), which is now runnable
+16/02/07 16:09:28 INFO storage.MemoryStore: ensureFreeSpace(7312) called with curMem=407492, maxMem=556038881
+16/02/07 16:09:28 INFO storage.MemoryStore: Block broadcast_23 stored as values in memory (estimated size 7.1 KB, free 529.9 MB)
+16/02/07 16:09:28 INFO storage.MemoryStore: ensureFreeSpace(4583) called with curMem=414804, maxMem=556038881
+16/02/07 16:09:28 INFO storage.MemoryStore: Block broadcast_23_piece0 stored as bytes in memory (estimated size 4.5 KB, free 529.9 MB)
+16/02/07 16:09:28 INFO storage.BlockManagerInfo: Added broadcast_23_piece0 in memory on 10.22.250.22:59299 (size: 4.5 KB, free: 530.2 MB)
+16/02/07 16:09:28 INFO spark.SparkContext: Created broadcast 23 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 23 (PythonRDD[87] at sortByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:173)
+16/02/07 16:09:28 INFO scheduler.TaskSchedulerImpl: Adding task set 23.0 with 2 tasks
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 23.0 (TID 44, 10.22.250.19, PROCESS_LOCAL, 1958 bytes)
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 23.0 (TID 45, 10.22.250.22, PROCESS_LOCAL, 1958 bytes)
+16/02/07 16:09:28 INFO storage.BlockManagerInfo: Added broadcast_23_piece0 in memory on 10.22.250.22:39918 (size: 4.5 KB, free: 530.2 MB)
+16/02/07 16:09:28 INFO storage.BlockManagerInfo: Added broadcast_23_piece0 in memory on 10.22.250.19:41965 (size: 4.5 KB, free: 530.2 MB)
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 1 to 10.22.250.22:56305
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 1 is 164 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 1 to 10.22.250.19:54483
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 23.0 (TID 45) in 58 ms on 10.22.250.22 (1/2)
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 23.0 (TID 44) in 61 ms on 10.22.250.19 (2/2)
+16/02/07 16:09:28 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 23.0, whose tasks have all completed, from pool 
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: ResultStage 23 (sortByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:173) finished in 0.062 s
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Job 1 finished: sortByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:173, took 3.503749 s
+16/02/07 16:09:28 INFO spark.SparkContext: Starting job: sortByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:173
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 0 is 148 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 20 is 164 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 19 is 164 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 18 is 164 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 17 is 164 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 16 is 164 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 15 is 164 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 14 is 162 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 13 is 162 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 12 is 162 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 11 is 162 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 10 is 164 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 9 is 164 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 8 is 164 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 7 is 162 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 6 is 164 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 5 is 164 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 4 is 164 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 3 is 162 bytes
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 2 is 162 bytes
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Got job 2 (sortByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:173) with 2 output partitions
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Final stage: ResultStage 45(sortByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:173)
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Parents of final stage: List(ShuffleMapStage 44)
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Missing parents: List()
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Submitting ResultStage 45 (PythonRDD[88] at sortByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:173), which has no missing parents
+16/02/07 16:09:28 INFO storage.MemoryStore: ensureFreeSpace(7176) called with curMem=419387, maxMem=556038881
+16/02/07 16:09:28 INFO storage.MemoryStore: Block broadcast_24 stored as values in memory (estimated size 7.0 KB, free 529.9 MB)
+16/02/07 16:09:28 INFO storage.MemoryStore: ensureFreeSpace(4602) called with curMem=426563, maxMem=556038881
+16/02/07 16:09:28 INFO storage.MemoryStore: Block broadcast_24_piece0 stored as bytes in memory (estimated size 4.5 KB, free 529.9 MB)
+16/02/07 16:09:28 INFO storage.BlockManagerInfo: Added broadcast_24_piece0 in memory on 10.22.250.22:59299 (size: 4.5 KB, free: 530.2 MB)
+16/02/07 16:09:28 INFO spark.SparkContext: Created broadcast 24 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 45 (PythonRDD[88] at sortByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:173)
+16/02/07 16:09:28 INFO scheduler.TaskSchedulerImpl: Adding task set 45.0 with 2 tasks
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 45.0 (TID 46, 10.22.250.19, PROCESS_LOCAL, 1958 bytes)
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 45.0 (TID 47, 10.22.250.22, PROCESS_LOCAL, 1958 bytes)
+16/02/07 16:09:28 INFO storage.BlockManagerInfo: Added broadcast_24_piece0 in memory on 10.22.250.22:39918 (size: 4.5 KB, free: 530.2 MB)
+16/02/07 16:09:28 INFO storage.BlockManagerInfo: Added broadcast_24_piece0 in memory on 10.22.250.19:41965 (size: 4.5 KB, free: 530.2 MB)
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 45.0 (TID 47) in 54 ms on 10.22.250.22 (1/2)
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 45.0 (TID 46) in 56 ms on 10.22.250.19 (2/2)
+16/02/07 16:09:28 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 45.0, whose tasks have all completed, from pool 
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: ResultStage 45 (sortByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:173) finished in 0.057 s
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Job 2 finished: sortByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:173, took 0.103012 s
+16/02/07 16:09:28 INFO spark.SparkContext: Starting job: runJob at PythonRDD.scala:393
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Registering RDD 90 (sortByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:173)
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Got job 3 (runJob at PythonRDD.scala:393) with 1 output partitions
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Final stage: ResultStage 68(runJob at PythonRDD.scala:393)
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Parents of final stage: List(ShuffleMapStage 67)
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Missing parents: List(ShuffleMapStage 67)
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Submitting ShuffleMapStage 67 (PairwiseRDD[90] at sortByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:173), which has no missing parents
+16/02/07 16:09:28 INFO storage.MemoryStore: ensureFreeSpace(8256) called with curMem=431165, maxMem=556038881
+16/02/07 16:09:28 INFO storage.MemoryStore: Block broadcast_25 stored as values in memory (estimated size 8.1 KB, free 529.9 MB)
+16/02/07 16:09:28 INFO storage.MemoryStore: ensureFreeSpace(5328) called with curMem=439421, maxMem=556038881
+16/02/07 16:09:28 INFO storage.MemoryStore: Block broadcast_25_piece0 stored as bytes in memory (estimated size 5.2 KB, free 529.9 MB)
+16/02/07 16:09:28 INFO storage.BlockManagerInfo: Added broadcast_25_piece0 in memory on 10.22.250.22:59299 (size: 5.2 KB, free: 530.2 MB)
+16/02/07 16:09:28 INFO spark.SparkContext: Created broadcast 25 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 67 (PairwiseRDD[90] at sortByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:173)
+16/02/07 16:09:28 INFO scheduler.TaskSchedulerImpl: Adding task set 67.0 with 2 tasks
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 67.0 (TID 48, 10.22.250.22, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 67.0 (TID 49, 10.22.250.19, PROCESS_LOCAL, 1947 bytes)
+16/02/07 16:09:28 INFO storage.BlockManagerInfo: Added broadcast_25_piece0 in memory on 10.22.250.22:39918 (size: 5.2 KB, free: 530.2 MB)
+16/02/07 16:09:28 INFO storage.BlockManagerInfo: Added broadcast_25_piece0 in memory on 10.22.250.19:41965 (size: 5.2 KB, free: 530.2 MB)
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 67.0 (TID 49) in 61 ms on 10.22.250.19 (1/2)
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 67.0 (TID 48) in 64 ms on 10.22.250.22 (2/2)
+16/02/07 16:09:28 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 67.0, whose tasks have all completed, from pool 
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: ShuffleMapStage 67 (sortByKey at /home/xuanwang/workspace/CS240A/hw2/pagerank-start/pagerank/simple_page_rank.py:173) finished in 0.065 s
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: looking for newly runnable stages
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: running: Set()
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: waiting: Set(ResultStage 68)
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: failed: Set()
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Missing parents for ResultStage 68: List()
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Submitting ResultStage 68 (PythonRDD[93] at RDD at PythonRDD.scala:43), which is now runnable
+16/02/07 16:09:28 INFO storage.MemoryStore: ensureFreeSpace(5496) called with curMem=444749, maxMem=556038881
+16/02/07 16:09:28 INFO storage.MemoryStore: Block broadcast_26 stored as values in memory (estimated size 5.4 KB, free 529.9 MB)
+16/02/07 16:09:28 INFO storage.MemoryStore: ensureFreeSpace(3568) called with curMem=450245, maxMem=556038881
+16/02/07 16:09:28 INFO storage.MemoryStore: Block broadcast_26_piece0 stored as bytes in memory (estimated size 3.5 KB, free 529.8 MB)
+16/02/07 16:09:28 INFO storage.BlockManagerInfo: Added broadcast_26_piece0 in memory on 10.22.250.22:59299 (size: 3.5 KB, free: 530.2 MB)
+16/02/07 16:09:28 INFO spark.SparkContext: Created broadcast 26 from broadcast at DAGScheduler.scala:861
+16/02/07 16:09:28 INFO scheduler.DAGScheduler: Submitting 1 missing tasks from ResultStage 68 (PythonRDD[93] at RDD at PythonRDD.scala:43)
+16/02/07 16:09:28 INFO scheduler.TaskSchedulerImpl: Adding task set 68.0 with 1 tasks
+16/02/07 16:09:28 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 68.0 (TID 50, 10.22.250.19, PROCESS_LOCAL, 1958 bytes)
+16/02/07 16:09:28 INFO storage.BlockManagerInfo: Added broadcast_26_piece0 in memory on 10.22.250.19:41965 (size: 3.5 KB, free: 530.2 MB)
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 21 to 10.22.250.19:54483
+16/02/07 16:09:28 INFO spark.MapOutputTrackerMaster: Size of output statuses for shuffle 21 is 159 bytes
+16/02/07 16:09:29 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 68.0 (TID 50) in 70 ms on 10.22.250.19 (1/1)
+16/02/07 16:09:29 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 68.0, whose tasks have all completed, from pool 
+16/02/07 16:09:29 INFO scheduler.DAGScheduler: ResultStage 68 (runJob at PythonRDD.scala:393) finished in 0.070 s
+16/02/07 16:09:29 INFO scheduler.DAGScheduler: Job 3 finished: runJob at PythonRDD.scala:393, took 0.157290 s
+16/02/07 16:09:29 INFO spark.SparkContext: Invoking stop() from shutdown hook
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/metrics/json,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/stages/stage/kill,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/api,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/static,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/executors/threadDump/json,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/executors/threadDump,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/executors/json,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/executors,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/environment/json,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/environment,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/storage/rdd/json,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/storage/rdd,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/storage/json,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/storage,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/stages/pool/json,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/stages/pool,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/stages/stage/json,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/stages/stage,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/stages/json,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/stages,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/jobs/job/json,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/jobs/job,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/jobs/json,null}
+16/02/07 16:09:29 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/jobs,null}
+16/02/07 16:09:29 INFO ui.SparkUI: Stopped Spark web UI at http://10.22.250.22:4040
+16/02/07 16:09:29 INFO scheduler.DAGScheduler: Stopping DAGScheduler
+16/02/07 16:09:29 INFO cluster.SparkDeploySchedulerBackend: Shutting down all executors
+16/02/07 16:09:29 INFO cluster.SparkDeploySchedulerBackend: Asking each executor to shut down
+16/02/07 16:09:29 INFO spark.MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+16/02/07 16:09:29 INFO storage.MemoryStore: MemoryStore cleared
+16/02/07 16:09:29 INFO storage.BlockManager: BlockManager stopped
+16/02/07 16:09:29 INFO storage.BlockManagerMaster: BlockManagerMaster stopped
+16/02/07 16:09:29 INFO scheduler.OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+16/02/07 16:09:29 INFO spark.SparkContext: Successfully stopped SparkContext
+16/02/07 16:09:29 INFO util.ShutdownHookManager: Shutdown hook called
+16/02/07 16:09:29 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-14004a22-5f70-4466-a53a-a400468d8a7a
+16/02/07 16:09:29 INFO remote.RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+16/02/07 16:09:29 INFO remote.RemoteActorRefProvider$RemotingTerminator: Remote daemon shut down; proceeding with flushing remote transports.
+16/02/07 16:09:29 INFO remote.RemoteActorRefProvider$RemotingTerminator: Remoting shut down.
+DEPRECATED: Use of this script to execute hdfs command is deprecated.
+Instead use the hdfs command for it.
+
+16/02/07 16:09:30 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+copyToLocal: `output/part*': No such file or directory
+mySpark: Using /home/xuanwang/mycluster.conf/spark/slaves as our slaves file
+mySpark: Reading in /home/xuanwang/mycluster.conf/spark/spark-env.sh as our slaves file
+stopping org.apache.spark.deploy.master.Master
+mySpark: Stopping worker on comet-23-01.ibnet:
+  /opt/spark/1.5.2/sbin/spark-daemon.sh --config /home/xuanwang/mycluster.conf/spark stop org.apache.spark.deploy.worker.Worker 1
+stopping org.apache.spark.deploy.worker.Worker
+mySpark: Stopping worker on comet-23-04.ibnet:
+  /opt/spark/1.5.2/sbin/spark-daemon.sh --config /home/xuanwang/mycluster.conf/spark stop org.apache.spark.deploy.worker.Worker 1
+stopping org.apache.spark.deploy.worker.Worker
+16/02/07 16:09:32 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Stopping namenodes on [comet-23-01.ibnet]
+comet-23-01.ibnet: stopping namenode
+comet-23-01.ibnet: stopping datanode
+comet-23-04.ibnet: stopping datanode
+Stopping secondary namenodes [comet-23-01.ibnet]
+comet-23-01.ibnet: stopping secondarynamenode
+16/02/07 16:09:50 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Copying Hadoop logs back to /home/xuanwang/mycluster.conf/logs...
+`/scratch/xuanwang/1606799/logs' -> `/home/xuanwang/mycluster.conf/logs'
+`/scratch/xuanwang/1606799/logs/hadoop-xuanwang-datanode-comet-23-01.sdsc.edu.out' -> `/home/xuanwang/mycluster.conf/logs/hadoop-xuanwang-datanode-comet-23-01.sdsc.edu.out'
+`/scratch/xuanwang/1606799/logs/SecurityAuth-xuanwang.audit' -> `/home/xuanwang/mycluster.conf/logs/SecurityAuth-xuanwang.audit'
+`/scratch/xuanwang/1606799/logs/hadoop-xuanwang-namenode-comet-23-01.sdsc.edu.log' -> `/home/xuanwang/mycluster.conf/logs/hadoop-xuanwang-namenode-comet-23-01.sdsc.edu.log'
+`/scratch/xuanwang/1606799/logs/hadoop-xuanwang-secondarynamenode-comet-23-01.sdsc.edu.log' -> `/home/xuanwang/mycluster.conf/logs/hadoop-xuanwang-secondarynamenode-comet-23-01.sdsc.edu.log'
+`/scratch/xuanwang/1606799/logs/hadoop-xuanwang-namenode-comet-23-01.sdsc.edu.out' -> `/home/xuanwang/mycluster.conf/logs/hadoop-xuanwang-namenode-comet-23-01.sdsc.edu.out'
+`/scratch/xuanwang/1606799/logs/hadoop-xuanwang-datanode-comet-23-01.sdsc.edu.log' -> `/home/xuanwang/mycluster.conf/logs/hadoop-xuanwang-datanode-comet-23-01.sdsc.edu.log'
+`/scratch/xuanwang/1606799/logs/spark-xuanwang-org.apache.spark.deploy.worker.Worker-1-comet-23-01.sdsc.edu.out' -> `/home/xuanwang/mycluster.conf/logs/spark-xuanwang-org.apache.spark.deploy.worker.Worker-1-comet-23-01.sdsc.edu.out'
+`/scratch/xuanwang/1606799/logs/hadoop-xuanwang-secondarynamenode-comet-23-01.sdsc.edu.out' -> `/home/xuanwang/mycluster.conf/logs/hadoop-xuanwang-secondarynamenode-comet-23-01.sdsc.edu.out'
+`/scratch/xuanwang/1606799/logs/spark-xuanwang-org.apache.spark.deploy.master.Master-1-comet-23-01.out' -> `/home/xuanwang/mycluster.conf/logs/spark-xuanwang-org.apache.spark.deploy.master.Master-1-comet-23-01.out'
+removed directory: `/scratch/xuanwang/1606799/tmp/dfs/namesecondary'
+removed directory: `/scratch/xuanwang/1606799/tmp/dfs'
+removed directory: `/scratch/xuanwang/1606799/tmp'
+removed `/scratch/xuanwang/1606799/namenode_data/current/seen_txid'
+removed `/scratch/xuanwang/1606799/namenode_data/current/fsimage_0000000000000000000'
+removed `/scratch/xuanwang/1606799/namenode_data/current/fsimage_0000000000000000000.md5'
+removed `/scratch/xuanwang/1606799/namenode_data/current/edits_inprogress_0000000000000000001'
+removed `/scratch/xuanwang/1606799/namenode_data/current/VERSION'
+removed directory: `/scratch/xuanwang/1606799/namenode_data/current'
+removed directory: `/scratch/xuanwang/1606799/namenode_data'
+removed `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/current/finalized/subdir0/subdir0/blk_1073741825_1001.meta'
+removed `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/current/finalized/subdir0/subdir0/blk_1073741825'
+removed directory: `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/current/finalized/subdir0/subdir0'
+removed directory: `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/current/finalized/subdir0'
+removed directory: `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/current/finalized'
+removed `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/current/VERSION'
+removed directory: `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/current/rbw'
+removed `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/current/dfsUsed'
+removed directory: `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/current'
+removed `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/dncp_block_verification.log.curr'
+removed `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/dncp_block_verification.log.prev'
+removed directory: `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/tmp'
+removed directory: `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380'
+removed `/scratch/xuanwang/1606799/hdfs_data/current/VERSION'
+removed directory: `/scratch/xuanwang/1606799/hdfs_data/current'
+removed directory: `/scratch/xuanwang/1606799/hdfs_data'
+removed directory: `/scratch/xuanwang/1606799/pids'
+removed `/scratch/xuanwang/1606799/logs/hadoop-xuanwang-datanode-comet-23-01.sdsc.edu.out'
+removed `/scratch/xuanwang/1606799/logs/SecurityAuth-xuanwang.audit'
+removed `/scratch/xuanwang/1606799/logs/hadoop-xuanwang-namenode-comet-23-01.sdsc.edu.log'
+removed `/scratch/xuanwang/1606799/logs/hadoop-xuanwang-secondarynamenode-comet-23-01.sdsc.edu.log'
+removed `/scratch/xuanwang/1606799/logs/hadoop-xuanwang-namenode-comet-23-01.sdsc.edu.out'
+removed `/scratch/xuanwang/1606799/logs/hadoop-xuanwang-datanode-comet-23-01.sdsc.edu.log'
+removed `/scratch/xuanwang/1606799/logs/spark-xuanwang-org.apache.spark.deploy.worker.Worker-1-comet-23-01.sdsc.edu.out'
+removed `/scratch/xuanwang/1606799/logs/hadoop-xuanwang-secondarynamenode-comet-23-01.sdsc.edu.out'
+removed `/scratch/xuanwang/1606799/logs/spark-xuanwang-org.apache.spark.deploy.master.Master-1-comet-23-01.out'
+removed directory: `/scratch/xuanwang/1606799/logs'
+removed `/scratch/xuanwang/1606799/hdfs_data/current/VERSION'
+removed `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/dncp_block_verification.log.prev'
+removed directory: `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/tmp'
+removed `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/current/VERSION'
+removed `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/current/dfsUsed'
+removed directory: `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/current/rbw'
+removed `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/current/finalized/subdir0/subdir0/blk_1073741825_1001.meta'
+removed `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/current/finalized/subdir0/subdir0/blk_1073741825'
+removed directory: `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/current/finalized/subdir0/subdir0'
+removed directory: `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/current/finalized/subdir0'
+removed directory: `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/current/finalized'
+removed directory: `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/current'
+removed `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380/dncp_block_verification.log.curr'
+removed directory: `/scratch/xuanwang/1606799/hdfs_data/current/BP-1415237476-198.202.112.35-1454890131380'
+removed directory: `/scratch/xuanwang/1606799/hdfs_data/current'
+removed directory: `/scratch/xuanwang/1606799/hdfs_data'
+removed directory: `/scratch/xuanwang/1606799/pids'
+removed `/scratch/xuanwang/1606799/logs/hadoop-xuanwang-datanode-comet-23-04.sdsc.edu.out'
+removed `/scratch/xuanwang/1606799/logs/SecurityAuth-xuanwang.audit'
+removed `/scratch/xuanwang/1606799/logs/spark-xuanwang-org.apache.spark.deploy.worker.Worker-1-comet-23-04.sdsc.edu.out'
+removed `/scratch/xuanwang/1606799/logs/hadoop-xuanwang-datanode-comet-23-04.sdsc.edu.log'
+removed directory: `/scratch/xuanwang/1606799/logs'
+removed directory: `/tmp/Jetty_comet.23.01_ibnet_50090_secondary____.ooxrh3/.active'
+removed directory: `/tmp/Jetty_comet.23.01_ibnet_50090_secondary____.ooxrh3/jsp'
+removed directory: `/tmp/Jetty_comet.23.01_ibnet_50090_secondary____.ooxrh3'
+removed directory: `/tmp/Jetty_0_0_0_0_50070_hdfs____w2cu08_6551389130399246902/.active'
+removed directory: `/tmp/Jetty_0_0_0_0_50070_hdfs____w2cu08_6551389130399246902/jsp'
+removed directory: `/tmp/Jetty_0_0_0_0_50070_hdfs____w2cu08_6551389130399246902'
+removed directory: `/tmp/Jetty_0_0_0_0_50075_datanode____hwtdwq_6494168375151806357/.active'
+removed directory: `/tmp/Jetty_0_0_0_0_50075_datanode____hwtdwq_6494168375151806357/jsp'
+removed directory: `/tmp/Jetty_0_0_0_0_50075_datanode____hwtdwq_6494168375151806357'

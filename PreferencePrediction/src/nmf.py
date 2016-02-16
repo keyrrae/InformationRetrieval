@@ -51,7 +51,7 @@ def matrix_factorization(R, P, Q, K, steps=8000, alpha=0.0002, beta=0.02):
 if __name__ == "__main__":
     print "start"
     R = [
-         [5,3,0,1],
+         [1000,3,0,1],
          [4,0,0,1],
          [1,1,0,5],
          [1,0,0,4],

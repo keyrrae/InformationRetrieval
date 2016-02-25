@@ -17,12 +17,55 @@ class Review:
         return parsed_json['business_id'] in reslist.value
 
     @staticmethod
+    def getuserid(line):
+        parsed_json = json.loads(line)
+        return str(parsed_json['user_id'])
+
+    @staticmethod
     def mapper(line):
-        parsed_json = json.loads((line))
+        parsed_json = json.loads(line)
         key = str(parsed_json['user_id'])
         value = (str(parsed_json['business_id']), int(parsed_json['stars']))
 
         return key, value
+
+    @staticmethod
+    def getUsrResStar(line):
+        parsed_json = json.loads(line)
+        user = str(parsed_json['user_id'])
+        busi = str(parsed_json['business_id'])
+        star = int(parsed_json['stars'])
+        return user, busi, star
+
+    @staticmethod
+    def normalize((user, busiStars)):
+        sum = 0
+        for item in busiStars:
+            busi, star = item
+            sum += star
+
+        avg = sum / float(len(busiStars))
+        res = []
+        for item in busiStars:
+            busi, star = item
+            res.append((busi, star - avg))
+        return user, avg, res
+
+    @staticmethod
+    def flatten((user, avg, busiStars)):
+        retstr = ""
+        for i, (busi, star) in enumerate(busiStars):
+            if i < len(busiStars) - 1:
+                retstr += '(' + user + ',' + str(busi) + ',' + str(star) + "),"
+            else:
+                retstr += '(' + user + ',' + str(busi) + ',' + str(star) + ')'
+        return retstr
+
+    @staticmethod
+    def vectorize(line):
+        parsed_line = line.strip().strip("()").split(',')
+        print len(parsed_line)
+        return parsed_line[0], parsed_line[1], float(parsed_line[2])
 
     @staticmethod
     def combiner(a):    # Turns value a (a tuple) into a list of a single tuple.
@@ -46,3 +89,11 @@ class Review:
         else:
             accum.append(value)
             return accum
+
+    @staticmethod
+    def reshape((user, busiStars)):
+        if type(busiStars) == tuple:
+            res = [busiStars]
+        else:
+            res = busiStars
+        return user, res

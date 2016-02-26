@@ -15,6 +15,7 @@ from pyspark.mllib.linalg.distributed import RowMatrix
 from pyspark.mllib.recommendation import ALS, MatrixFactorizationModel, Rating
 from pyspark.mllib.clustering import PowerIterationClustering, PowerIterationClusteringModel
 from myRowMatrix import RowMatrixWithSimilarity
+from matplotlib import pyplot as plt
 
 
 def assignNum(lst):
@@ -37,14 +38,60 @@ def parseUserBusiLst(lst, usrDict, busiDict):
 
 #def computeRmse(model, validation, numValidation):
 
+
+def parseReviewToTrainingSet(reviewRDD, testReviewRDD):
+    reviewRestaRDD = reviewRDD.map(Review.toString).filter(lambda line: Review.is_res(line, restaurantListBC))
+    userList = reviewRestaRDD.map(Review.getuserid).sortByKey().collect()
+    restList = reviewRestaRDD.map(Review.getbusiid).sortByKey().collect()
+    userListBC = sc.broadcast(userList)
+    restListBC = sc.broadcast(restList)
+
+    print(userList[10])
+
+    '''
+    Generate Dictionaries of users in training set and broadcast
+    '''
+    userIdToNumDict, userNumToIdDict = assignNum(userList)
+
+    userIdToNumDictBC = sc.broadcast(userIdToNumDict)
+    userNumToIdDictBC = sc.broadcast(userNumToIdDict)
+
+    '''
+    Generate Dictionaries of Restaurants in training set and broadcast
+    '''
+    restIdToNumDict, restNumToIdDict = assignNum(restList)
+
+    restIdToNumDictBC = sc.broadcast(restIdToNumDict)
+    restNumToIdDictBC = sc.broadcast(restNumToIdDict)
+
+
+    userReviewRestaRDD = reviewRestaRDD.map(Review.mapper).reduceByKey(Review.reducer).map(Review.reshape)
+    userReviewRestaCollNormRDD = userReviewRestaRDD.map(Review.normalize)  # Subtract average values
+    userReviewRestaNormLst = userReviewRestaCollNormRDD.collect()  # map(Review.flatten).flatMap(Review.vectorize)
+    userAvgDict = dict(userReviewRestaCollNormRDD.map(lambda x: (x[0], x[1])).collect())
+
+    userReviewRestaLst = parseUserBusiLst(userReviewRestaNormLst, userIdToNumDict, restIdToNumDict)
+
+    userReviewRestaNormRDD = sc.parallelize(userReviewRestaLst)
+    #usrResStarTupleRDD = reviewRestaRDD.map(Review.getUsrResStar)
+
+
+    testReviewRestRDD = testReviewRDD.map(Review.toString).map(Review.getUsrResStar)
+
+    print(userReviewRestaNormRDD.take(10))
+    testReviewRestRDD = testReviewRestRDD.filter(lambda x: x[0] in userListBC.value and x[1] in restListBC.value)\
+        .map(lambda x: Review.normalizeStar(userAvgDict, x))\
+        .map(lambda x: Review.replaceIDwithNum(x, userIdToNumDictBC, restIdToNumDictBC))
+        #.filter(lambda x: x[0] != 0 and x[1] != 0)
+    print(testReviewRestRDD.take(10))
+ # and x[1] in restaurantListBC.value)\
+    return userReviewRestaNormRDD, testReviewRestRDD
+
 if __name__ == "__main__":
     sc = SparkContext('local')
 
     businessRDD = sc.textFile("../../../data/yelp_academic_dataset_business.json")
     sc.setCheckpointDir("checkpoints/")
-
-    rows = sc.parallelize([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])
-    mat = RowMatrixWithSimilarity(rows)
 
     restaurantRDD = businessRDD.map(Business.to_string).filter(Business.is_res)
     for item in businessRDD.take(10):
@@ -59,52 +106,75 @@ if __name__ == "__main__":
     restaurantListBC = sc.broadcast(restaurantList)
 
     reviewRDD = sc.textFile("../../../data/yelp_academic_dataset_review.json")
-    reviewRestaRDD = reviewRDD.map(Review.toString).filter(lambda line: Review.is_res(line, restaurantListBC))
-    userListRDD = reviewRestaRDD.map(Review.getuserid).sortByKey().collect()
 
-    idToNumDict, numToIdDict = assignNum(userListRDD)
+    reviewTestRDD = sc.textFile("../../../data/yelp_academic_dataset_review_tail.json")
 
-    idToNumDictBC = sc.broadcast(idToNumDict)
-    numToIdDictBC = sc.broadcast(numToIdDict)
-
-    userReviewRestaRDD = reviewRestaRDD.map(Review.mapper).reduceByKey(Review.reducer).map(Review.reshape)
-    print(userReviewRestaRDD.take(10))
-    userReviewRestaCollNormRDD = userReviewRestaRDD.map(Review.normalize)  # Subtract average values
-    userReviewRestaNormLst = userReviewRestaCollNormRDD.collect()  # map(Review.flatten).flatMap(Review.vectorize)
-    for i in range(100):
-        print(userReviewRestaNormLst[i])
-    userReviewRestaLst = parseUserBusiLst(userReviewRestaNormLst, idToNumDict, restGetNum)
-
-    if userReviewRestaLst == []:
-        print("duck")
-    userReviewRestaNormRDD = sc.parallelize(userReviewRestaLst)
-    print(userReviewRestaNormRDD.first())
-    usrResStarTupleRDD = reviewRestaRDD.map(Review.getUsrResStar)
-
-
-
+    userReviewRestaNormRDD, testReviewRestRDD = parseReviewToTrainingSet(reviewRDD, reviewTestRDD)
+    print(userReviewRestaNormRDD.take(10))
+    print("============")
+    print(testReviewRestRDD.take(10))
 
     # Build the recommendation model using Alternating Least Squares
-
-    ranks = [8, 10, 12, 14, 16]
-    lambdas = [0.01, 0.1, 1, 10.0]
+'''
+    ranks = range(2, 10) #21
+    lambdas = [0.005, 0.01, 0.015, 0.02, 0.025, 0.03]
+    symbols = ['*-', 'x-', 'o-', '^-', 'D-', '+-', 's-', 'v-', '<-', '>-']
     numIters = [5, 10, 20]
     bestModel = None
     bestValidationRmse = float("inf")
     bestRank = 0
     bestLambda = -1.0
     bestNumIter = -1
-    testdata = userReviewRestaNormRDD.map(lambda p: (p[0], p[1]))
+    testdata = testReviewRestRDD.map(lambda p: (p[0], p[1]))
 
-    for rank, lmbda, numIter in itertools.product(ranks, lambdas, numIters):
+
+    rmseVsRanks = []
+    #for rank, lmbda, numIter in itertools.product(ranks, lambdas, numIters):
+    fixNumIter = 20
+    for lmbda in lambdas:
         ALS.checkpointInterval = 2
+        rmseLst = []
+        for rank in ranks:
+            model = ALS.train(userReviewRestaNormRDD, rank, fixNumIter, lmbda)
+            predictions = model.predictAll(testdata).map(lambda r: ((r[0], r[1]), r[2]))
+            ratesAndPreds = userReviewRestaNormRDD.map(lambda r: ((r[0], r[1]), r[2])).join(predictions)
+            validationRmse = math.sqrt(ratesAndPreds.map(lambda r: (r[1][0] - r[1][1])**2).mean())
+            rmseLst.append(validationRmse)
+        rmseVsRanks.append(rmseLst)
+    print(len(rmseVsRanks[0]))
+
+    plt.figure(1)
+    for i, line in enumerate(rmseVsRanks):
+        plt.plot(ranks, line, symbols[i])
+    plt.show()
+'''
+
+'''
+    lamb = 0.01
+    rank = 8
+    numIterations = 20
+    model = ALS.train(userReviewRestaNormRDD, rank, numIterations, lamb)
+
+    # Evaluate the model on training data
+    testdata = userReviewRestaNormRDD.map(lambda p: (p[0], p[1]))
+    predictions = model.predictAll(testdata).map(lambda r: ((r[0], r[1]), r[2]))
+    ratesAndPreds = userReviewRestaNormRDD.map(lambda r: ((r[0], r[1]), r[2])).join(predictions)
+    RMSE = math.sqrt(ratesAndPreds.map(lambda r: (r[1][0] - r[1][1])**2).mean())
+    print(ratesAndPreds.collect())
+    print("Mean Squared Error = " + str(RMSE))
+    #for rank, lmbda, numIter in itertools.product(ranks, lambdas, numIters):
+
+    for rank in ranks:
+        ALS.checkpointInterval = 2
+        rankLst = []
         model = ALS.train(userReviewRestaNormRDD, rank, numIter, lmbda)
         predictions = model.predictAll(testdata).map(lambda r: ((r[0], r[1]), r[2]))
         ratesAndPreds = userReviewRestaNormRDD.map(lambda r: ((r[0], r[1]), r[2])).join(predictions)
         validationRmse = math.sqrt(ratesAndPreds.map(lambda r: (r[1][0] - r[1][1])**2).mean())
 
         print("RMSE (validation) = %f for the model trained with " % validationRmse + \
-              "rank = %d, lambda = %.1f, and numIter = %d." % (rank, lmbda, numIter))
+              "rank = %d, lambda = %f, and numIter = %d." % (rank, lmbda, numIter))
+        res.append((rank, lmbda, numIter, validationRmse))
         if (validationRmse < bestValidationRmse):
             bestModel = model
             bestValidationRmse = validationRmse
@@ -112,23 +182,13 @@ if __name__ == "__main__":
             bestLambda = lmbda
             bestNumIter = numIter
 
-    print("The best model was trained with rank = %d and lambda = %.1f, " % (bestRank, bestLambda) \
+    print("The best model was trained with rank = %d and lambda = %.2f, " % (bestRank, bestLambda) \
       + "and numIter = %d, and its RMSE on the validation set is %f." % (bestNumIter, bestValidationRmse))
 
-    '''
-    rank = 16
-    numIterations = 10
-    model = ALS.train(userReviewRestaNormRDD, rank, numIterations)
-
-    # Evaluate the model on training data
-    testdata = userReviewRestaNormRDD.map(lambda p: (p[0], p[1]))
-    predictions = model.predictAll(testdata).map(lambda r: ((r[0], r[1]), r[2]))
-    ratesAndPreds = userReviewRestaNormRDD.map(lambda r: ((r[0], r[1]), r[2])).join(predictions)
-    MSE = ratesAndPreds.map(lambda r: (r[1][0] - r[1][1])**2).mean()
-    print(ratesAndPreds.collect())
-    print("Mean Squared Error = " + str(MSE))
+    print(res)
     '''
 
-    userRDD = sc.textFile("../../../data/yelp_academic_dataset_user.json")
-    userRDD = userRDD.map(User.toString).map(User.getFriends)  # user friendlist
+   # userRDD = sc.textFile("../../../data/yelp_academic_dataset_user.json")
+   # userRDD = userRDD.map(User.toString).map(User.getFriends)  # user friendlist
+
 

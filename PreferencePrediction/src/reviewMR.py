@@ -35,6 +35,13 @@ class Review:
         return key, value
 
     @staticmethod
+    def parseRatings(line):
+        parsed_json = json.loads(line)
+        key = int(str(parsed_json['date'])[-1])
+        value = (str(parsed_json['user_id']), str(parsed_json['business_id']), int(parsed_json['stars']))
+        return key, value
+
+    @staticmethod
     def getUsrResStar(line):
         parsed_json = json.loads(line)
         user = str(parsed_json['user_id'])
@@ -55,6 +62,13 @@ class Review:
         if busi in restGetIDBC.value:
             newBusi = restGetIDBC.value[busi]
         return newUser, newBusi, star
+
+    @staticmethod
+    def subtractAvg((user, busi, star), usrRatingAvgBC):
+        newStar = 0.0
+        if user in usrRatingAvgBC.value:
+            newStar = star - usrRatingAvgBC.value[user]
+        return user, busi, newStar
 
     @staticmethod
     def normalize((user, busiStars)):
@@ -102,7 +116,7 @@ class Review:
 
     @staticmethod
     def reducer(accum, value):
-        if type(accum) == tuple:
+        if type(accum) != list:
             temp = [accum]
             return temp
         else:
@@ -111,7 +125,7 @@ class Review:
 
     @staticmethod
     def reshape((user, busiStars)):
-        if type(busiStars) == tuple:
+        if type(busiStars) != list:
             res = [busiStars]
         else:
             res = busiStars

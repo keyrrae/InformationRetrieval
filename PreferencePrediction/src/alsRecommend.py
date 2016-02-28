@@ -118,6 +118,11 @@ if __name__ == "__main__":
     else:
         runValidation = False
 
+    if len(sys.argv) == 3:
+        numOfReviews = int(sys.argv[2])
+    else:
+        numOfReviews = 1000000
+
     conf = SparkConf() \
       .setAppName("YelpReviewALS") \
       .set("spark.executor.memory", "2g")
@@ -126,7 +131,7 @@ if __name__ == "__main__":
     reviewRDD = sc.textFile("../../../data/yelp_academic_dataset_review_res.txt")
     sc.setCheckpointDir("checkpoints/")
 
-    numOfReviews = 100000
+
     print(reviewRDD.take(10))
     ratings = sc.parallelize(reviewRDD.take(numOfReviews)).map(lambda x: str(x).strip().split(','))\
                 .map(lambda x: (int(x[0]), (x[1], x[2], int(x[3]))))

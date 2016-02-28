@@ -131,4 +131,13 @@ class Review:
             res = busiStars
         return user, res
 
+    @staticmethod
+    def reshapeList((user, busiStars)):
+        retlist = []
+        for item in busiStars:
+            if type(item) == list:
+                retlist.extend(item)
+            else:
+                retlist.append(item)
+        return user, retlist
 

@@ -22,11 +22,23 @@ class Review:
         return str(parsed_json['user_id'])
 
     @staticmethod
+    def getbusiid(line):
+        parsed_json = json.loads(line)
+        return str(parsed_json['business_id'])
+
+    @staticmethod
     def mapper(line):
         parsed_json = json.loads(line)
         key = str(parsed_json['user_id'])
         value = (str(parsed_json['business_id']), int(parsed_json['stars']))
 
+        return key, value
+
+    @staticmethod
+    def parseRatings(line):
+        parsed_json = json.loads(line)
+        key = int(str(parsed_json['date'])[-1])
+        value = (str(parsed_json['user_id']), str(parsed_json['business_id']), int(parsed_json['stars']))
         return key, value
 
     @staticmethod
@@ -36,6 +48,27 @@ class Review:
         busi = str(parsed_json['business_id'])
         star = int(parsed_json['stars'])
         return user, busi, star
+
+    @staticmethod
+    def normalizeStar(userAvgDict,(user, busi, star)):
+        return user, busi, star - userAvgDict[user]
+
+    @staticmethod
+    def replaceIDwithNum((user, busi, star), idToNumDictBC, restGetIDBC):
+        newBusi = 0
+        newUser = 0
+        if user in idToNumDictBC.value:
+            newUser = idToNumDictBC.value[user]
+        if busi in restGetIDBC.value:
+            newBusi = restGetIDBC.value[busi]
+        return newUser, newBusi, star
+
+    @staticmethod
+    def subtractAvg((user, busi, star), usrRatingAvgBC):
+        newStar = 0.0
+        if user in usrRatingAvgBC.value:
+            newStar = star - usrRatingAvgBC.value[user]
+        return user, busi, newStar
 
     @staticmethod
     def normalize((user, busiStars)):
@@ -83,7 +116,7 @@ class Review:
 
     @staticmethod
     def reducer(accum, value):
-        if type(accum) == tuple:
+        if type(accum) != list:
             temp = [accum]
             return temp
         else:
@@ -92,8 +125,19 @@ class Review:
 
     @staticmethod
     def reshape((user, busiStars)):
-        if type(busiStars) == tuple:
+        if type(busiStars) != list:
             res = [busiStars]
         else:
             res = busiStars
         return user, res
+
+    @staticmethod
+    def reshapeList((user, busiStars)):
+        retlist = []
+        for item in busiStars:
+            if type(item) == list:
+                retlist.extend(item)
+            else:
+                retlist.append(item)
+        return user, retlist
+

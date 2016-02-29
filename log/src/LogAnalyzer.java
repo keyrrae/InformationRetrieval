@@ -1,6 +1,6 @@
 
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.fs.*;
 import org.apache.hadoop.io.*;
 import org.apache.hadoop.mapreduce.*;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -30,8 +30,8 @@ public class LogAnalyzer {
 			System.err.println("Usage: loganalyzer <in> <out>");
 			System.exit(2);
 		}
-		long unixTime = System.currentTimeMillis() / 1000L;
-		writer.println("Jobs starts at:"+unixTime);
+		long unixTimeStart = System.currentTimeMillis() / 1000L;
+		writer.println("Jobs starts at:"+unixTimeStart);
 		
 		Job job_dailyUser = new Job(conf, "dailyUser");
 		Job job_dailyView = new Job(conf, "dailyView");
@@ -46,17 +46,17 @@ public class LogAnalyzer {
 		job_dailyUser.setOutputKeyClass(Text.class);
 		job_dailyUser.setOutputValueClass(IntWritable.class);
 		for (int i=1; i<2; i++)
-			FileInputFormat.addInputPath(job_dailyUser, new Path(args[0]+"/apache"+i+".splunk.com/access_combined.log"));
-		FileOutputFormat.setOutputPath(job_dailyUser, new Path(args[1]+"/dailyUser"));
+			FileInputFormat.addInputPath(job_dailyUser, new Path(args[0] + "/apache" + i + ".splunk.com/access_combined.log"));
+		FileOutputFormat.setOutputPath(job_dailyUser, new Path(args[1] + "/dailyUser"));
 		
 		job_dailyView.setJarByClass(LogAnalyzer.class);
 		job_dailyView.setMapperClass(MapDailyView.class);
 		job_dailyView.setReducerClass(Reduce.class);
 		job_dailyView.setOutputKeyClass(Text.class);
 		job_dailyView.setOutputValueClass(IntWritable.class);
-		for (int i=1; i<2; i++)
-			FileInputFormat.addInputPath(job_dailyView, new Path(args[0]+"/apache"+i+".splunk.com/access_combined.log"));
-		FileOutputFormat.setOutputPath(job_dailyView,new Path(args[1]+"/dailyView"));
+		for (int i=1; i<49; i++)
+			FileInputFormat.addInputPath(job_dailyView, new Path(args[0] + "/apache" + i + ".splunk.com/access_combined.log"));
+		FileOutputFormat.setOutputPath(job_dailyView,new Path(args[1] + "/dailyView"));
 
 		job_urlFrequency.setJarByClass(LogAnalyzer.class);
 		job_urlFrequency.setMapperClass(MapUrlFrequency.class);
@@ -65,9 +65,9 @@ public class LogAnalyzer {
 		job_urlFrequency.setMapOutputValueClass(IntWritable.class);
 		job_urlFrequency.setOutputKeyClass(IntWritable.class);
 		job_urlFrequency.setOutputValueClass(Text.class);
-		for (int i=1; i<2; i++)
-			FileInputFormat.addInputPath(job_urlFrequency, new Path(args[0]+"/apache"+i+".splunk.com/access_combined.log"));
-		FileOutputFormat.setOutputPath(job_urlFrequency,new Path(args[1]+"/urlFrequency"));
+		for (int i=1; i<49; i++)
+			FileInputFormat.addInputPath(job_urlFrequency, new Path(args[0] + "/apache" + i + ".splunk.com/access_combined.log"));
+		FileOutputFormat.setOutputPath(job_urlFrequency,new Path(args[1] + "/urlFrequency"));
 
 		job_userFrequency.setJarByClass(LogAnalyzer.class);
 		job_userFrequency.setMapperClass(MapUserFrequency.class);
@@ -76,40 +76,69 @@ public class LogAnalyzer {
 		job_userFrequency.setMapOutputValueClass(IntWritable.class);
 		job_userFrequency.setOutputKeyClass(IntWritable.class);
 		job_userFrequency.setOutputValueClass(Text.class);
-		for (int i=1; i<2; i++)
-			FileInputFormat.addInputPath(job_userFrequency, new Path(args[0]+"/apache"+i+".splunk.com/access_combined.log"));
-		FileOutputFormat.setOutputPath(job_userFrequency,new Path(args[1]+"/userFrequency"));
+		for (int i=1; i<49; i++)
+			FileInputFormat.addInputPath(job_userFrequency, new Path(args[0] + "/apache" + i + ".splunk.com/access_combined.log"));
+		FileOutputFormat.setOutputPath(job_userFrequency,new Path(args[1] + "/userFrequency"));
 		
-		boolean complete=job_dailyUser.waitForCompletion(true)&&job_dailyView.waitForCompletion(true)&&job_urlFrequency.waitForCompletion(true)&&job_userFrequency.waitForCompletion(true);
-
-		//         HashMap<String, Integer> hmap = new HashMap<String, Integer>();
-		// if(complete){
-		// 	FileReader f = new FileReader(args[1]+"/urlFrequency/part-r-00000");
-		// }
-		//
-		// writer.println("reading in file");
-		//         BufferedReader br = new BufferedReader(f);
-		// 	          String line;
-		// 	    	    while ((line = br.readLine()) != null) {
-		// 	            String delims = "[\\s]+";
-		// 	      			String[] parts = line.split(delims);
-		// 	      		  hmap.put(parts[0],Integer.parseInt(parts[1]));
-		// 	  writer.println(parts[0]);
-		// 	          }
-		//         Map<String, Integer> map = sortByValues(hmap);
-		//         Set set = map.entrySet();
-		//         Iterator iterator = set.iterator();
-		// int i = 0;
-		//         while(iterator.hasNext() && i < 5 ) {
-		//              Map.Entry me = (Map.Entry)iterator.next();
-		//              writer.println(me.getKey() + ": " + me.getValue());
-		// 	 ++i;
-		//         }
-		unixTime = System.currentTimeMillis() / 1000L;
-		writer.println("Jobs ends at:"+unixTime);
+		boolean complete = job_dailyUser.waitForCompletion(true) && 
+                           job_dailyView.waitForCompletion(true) && 
+                           job_urlFrequency.waitForCompletion(true) && 
+                           job_userFrequency.waitForCompletion(true);
+        
+        writer.println("Daily traffic - number of unique users:");
+        Path pt = new Path(args[1] + "/dailyUser/part-r-00000");
+        FileSystem fs = FileSystem.get(new Configuration());
+        BufferedReader br=new BufferedReader(new InputStreamReader(fs.open(pt)));
+		String line;
+		while ((line = br.readLine()) != null) {
+			writer.println(line);
+		}
+        writer.println("");
+        
+        writer.println("Daily traffic - number of page views:");
+        pt = new Path(args[1] + "/dailyView/part-r-00000");
+        fs = FileSystem.get(new Configuration());
+        br = new BufferedReader(new InputStreamReader(fs.open(pt)));
+		while ((line = br.readLine()) != null) {
+			writer.println(line);
+		}
+        writer.println("");
+        
+        writer.println("Top 5 most frequent URLs:");
+        getTopFive(new Path(args[1] + "/urlFrequency/part-r-00000"), writer);
+        writer.println("");
+        
+        writer.println("Top 5 most frequent users:");
+        getTopFive(new Path(args[1] + "/userFrequency/part-r-00000"), writer);  
+        writer.println("");  
+        
+		long unixTimeEnd = System.currentTimeMillis() / 1000L;
+		writer.println("Jobs ends at:" + unixTimeEnd);
+        writer.println("Total time:" + (unixTimeEnd - unixTimeStart));
 		writer.close();
 		System.exit(complete? 0 : 1);
 	}
+    
+  private static void getTopFive(Path pt, PrintWriter writer) throws Exception {     
+        FileSystem fs = FileSystem.get(new Configuration());
+        BufferedReader br = new BufferedReader(new InputStreamReader(fs.open(pt)));
+        HashMap<String, Integer> hmap = new HashMap<String, Integer>();
+        String line;
+        while ((line = br.readLine()) != null) {
+            String delims = "[\\s]+";
+            String[] parts = line.split(delims);
+            hmap.put(parts[0],Integer.parseInt(parts[1]));
+        }
+        Map<String, Integer> map = sortByValues(hmap);
+        Set set = map.entrySet();
+        Iterator iterator = set.iterator();
+        int i = 0;
+        while(iterator.hasNext() && i < 5 ) {
+             Map.Entry me = (Map.Entry)iterator.next();
+             writer.println(me.getKey() + "    " + me.getValue());
+             ++i;
+	   }
+  }
 
   private static HashMap sortByValues(HashMap map) { 
        List list = new LinkedList(map.entrySet());

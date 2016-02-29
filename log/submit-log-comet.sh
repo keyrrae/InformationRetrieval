@@ -2,7 +2,7 @@
 #SBATCH --job-name="loganalysis"
 #SBATCH --output="loganalysis.%j.%N.out"
 #SBATCH --partition=compute
-#SBATCH --nodes=2
+#SBATCH --nodes=4
 #SBATCH --ntasks-per-node=24
 #SBATCH -t 00:15:00
 export HADOOP_CONF_DIR=/home/$USER/cometcluster

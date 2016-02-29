@@ -20,5 +20,5 @@ submit:
 compile:
 	sbatch compile-hadoop-comet.sh
 clean:
-	rm target/*.class *.jar *.out
+	rm result.txt target/*.class *.jar *.out
 

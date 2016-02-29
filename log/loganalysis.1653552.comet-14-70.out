@@ -1,0 +1,284 @@
+myHadoop: Setting MH_IPOIB_TRANSFORM='s/\([^.]*\).*$/\1.ibnet/' from myhadoop.conf
+myHadoop: Setting MH_SCRATCH_DIR=/scratch/$USER/$SLURM_JOBID from myhadoop.conf
+myHadoop: Using HADOOP_HOME=/opt/hadoop/1.2.1
+myHadoop: Using MH_SCRATCH_DIR=/scratch/rachelym/1653552
+myHadoop: Using JAVA_HOME=/usr/java/latest
+myHadoop: Generating Hadoop configuration in directory in /home/rachelym/cometcluster...
+myHadoop: Backing up old config dir to /home/rachelym/cometcluster.1...
+`/home/rachelym/cometcluster' -> `/home/rachelym/cometcluster.1'
+myHadoop: Designating comet-14-70.ibnet as master node (namenode, secondary namenode, and jobtracker)
+myHadoop: The following nodes will be slaves (datanode, tasktracer):
+comet-14-70.ibnet
+comet-14-71.ibnet
+16/02/22 15:52:30 INFO namenode.NameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting NameNode
+STARTUP_MSG:   host = comet-14-70.sdsc.edu/198.202.117.202
+STARTUP_MSG:   args = [-format, -nonInteractive, -force]
+STARTUP_MSG:   version = 1.2.1
+STARTUP_MSG:   build = https://svn.apache.org/repos/asf/hadoop/common/branches/branch-1.2 -r 1503152; compiled by 'mattf' on Mon Jul 22 15:23:09 PDT 2013
+STARTUP_MSG:   java = 1.8.0_60
+************************************************************/
+16/02/22 15:52:30 INFO util.GSet: Computing capacity for map BlocksMap
+16/02/22 15:52:30 INFO util.GSet: VM type       = 64-bit
+16/02/22 15:52:30 INFO util.GSet: 2.0% max memory = 1005060096
+16/02/22 15:52:30 INFO util.GSet: capacity      = 2^21 = 2097152 entries
+16/02/22 15:52:30 INFO util.GSet: recommended=2097152, actual=2097152
+16/02/22 15:52:30 INFO namenode.FSNamesystem: fsOwner=rachelym
+16/02/22 15:52:30 INFO namenode.FSNamesystem: supergroup=supergroup
+16/02/22 15:52:30 INFO namenode.FSNamesystem: isPermissionEnabled=true
+16/02/22 15:52:30 INFO namenode.FSNamesystem: dfs.block.invalidate.limit=100
+16/02/22 15:52:30 INFO namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+16/02/22 15:52:30 INFO namenode.FSEditLog: dfs.namenode.edits.toleration.length = 0
+16/02/22 15:52:30 INFO namenode.NameNode: Caching file names occuring more than 10 times 
+16/02/22 15:52:31 INFO common.Storage: Image file /scratch/rachelym/1653552/namenode_data/current/fsimage of size 114 bytes saved in 0 seconds.
+16/02/22 15:52:31 INFO namenode.FSEditLog: closing edit log: position=4, editlog=/scratch/rachelym/1653552/namenode_data/current/edits
+16/02/22 15:52:31 INFO namenode.FSEditLog: close success: truncate to 4, editlog=/scratch/rachelym/1653552/namenode_data/current/edits
+16/02/22 15:52:31 INFO common.Storage: Storage directory /scratch/rachelym/1653552/namenode_data has been successfully formatted.
+16/02/22 15:52:31 INFO namenode.NameNode: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down NameNode at comet-14-70.sdsc.edu/198.202.117.202
+************************************************************/
+starting namenode, logging to /scratch/rachelym/1653552/logs/hadoop-rachelym-namenode-comet-14-70.out
+comet-14-70.ibnet: starting datanode, logging to /scratch/rachelym/1653552/logs/hadoop-rachelym-datanode-comet-14-70.sdsc.edu.out
+comet-14-71.ibnet: starting datanode, logging to /scratch/rachelym/1653552/logs/hadoop-rachelym-datanode-comet-14-71.sdsc.edu.out
+comet-14-70.ibnet: starting secondarynamenode, logging to /scratch/rachelym/1653552/logs/hadoop-rachelym-secondarynamenode-comet-14-70.sdsc.edu.out
+starting jobtracker, logging to /scratch/rachelym/1653552/logs/hadoop-rachelym-jobtracker-comet-14-70.out
+comet-14-70.ibnet: starting tasktracker, logging to /scratch/rachelym/1653552/logs/hadoop-rachelym-tasktracker-comet-14-70.sdsc.edu.out
+comet-14-71.ibnet: starting tasktracker, logging to /scratch/rachelym/1653552/logs/hadoop-rachelym-tasktracker-comet-14-71.sdsc.edu.out
+Copy data to HDFS .. 
+Run log analysis job ..
+16/02/22 15:52:39 WARN mapred.JobClient: Use GenericOptionsParser for parsing the arguments. Applications should implement Tool for the same.
+16/02/22 15:52:39 INFO input.FileInputFormat: Total input paths to process : 1
+16/02/22 15:52:39 INFO util.NativeCodeLoader: Loaded the native-hadoop library
+16/02/22 15:52:39 WARN snappy.LoadSnappy: Snappy native library not loaded
+16/02/22 15:52:40 INFO mapred.JobClient: Running job: job_201602221552_0001
+16/02/22 15:52:41 INFO mapred.JobClient:  map 0% reduce 0%
+16/02/22 15:52:44 INFO mapred.JobClient:  map 100% reduce 0%
+16/02/22 15:52:51 INFO mapred.JobClient:  map 100% reduce 33%
+16/02/22 15:52:52 INFO mapred.JobClient:  map 100% reduce 100%
+16/02/22 15:52:52 INFO mapred.JobClient: Job complete: job_201602221552_0001
+16/02/22 15:52:52 INFO mapred.JobClient: Counters: 29
+16/02/22 15:52:52 INFO mapred.JobClient:   Map-Reduce Framework
+16/02/22 15:52:52 INFO mapred.JobClient:     Spilled Records=2000
+16/02/22 15:52:52 INFO mapred.JobClient:     Map output materialized bytes=53442
+16/02/22 15:52:52 INFO mapred.JobClient:     Reduce input records=1000
+16/02/22 15:52:52 INFO mapred.JobClient:     Virtual memory (bytes) snapshot=4081799168
+16/02/22 15:52:52 INFO mapred.JobClient:     Map input records=1000
+16/02/22 15:52:52 INFO mapred.JobClient:     SPLIT_RAW_BYTES=117
+16/02/22 15:52:52 INFO mapred.JobClient:     Map output bytes=51436
+16/02/22 15:52:52 INFO mapred.JobClient:     Reduce shuffle bytes=53442
+16/02/22 15:52:52 INFO mapred.JobClient:     Physical memory (bytes) snapshot=387235840
+16/02/22 15:52:52 INFO mapred.JobClient:     Reduce input groups=49
+16/02/22 15:52:52 INFO mapred.JobClient:     Combine output records=0
+16/02/22 15:52:52 INFO mapred.JobClient:     Reduce output records=49
+16/02/22 15:52:52 INFO mapred.JobClient:     Map output records=1000
+16/02/22 15:52:52 INFO mapred.JobClient:     Combine input records=0
+16/02/22 15:52:52 INFO mapred.JobClient:     CPU time spent (ms)=1680
+16/02/22 15:52:52 INFO mapred.JobClient:     Total committed heap usage (bytes)=402653184
+16/02/22 15:52:52 INFO mapred.JobClient:   File Input Format Counters 
+16/02/22 15:52:52 INFO mapred.JobClient:     Bytes Read=342097
+16/02/22 15:52:52 INFO mapred.JobClient:   FileSystemCounters
+16/02/22 15:52:52 INFO mapred.JobClient:     HDFS_BYTES_READ=342214
+16/02/22 15:52:52 INFO mapred.JobClient:     FILE_BYTES_WRITTEN=223708
+16/02/22 15:52:52 INFO mapred.JobClient:     FILE_BYTES_READ=53442
+16/02/22 15:52:52 INFO mapred.JobClient:     HDFS_BYTES_WRITTEN=2406
+16/02/22 15:52:52 INFO mapred.JobClient:   Job Counters 
+16/02/22 15:52:52 INFO mapred.JobClient:     Launched map tasks=1
+16/02/22 15:52:52 INFO mapred.JobClient:     Launched reduce tasks=1
+16/02/22 15:52:52 INFO mapred.JobClient:     SLOTS_MILLIS_REDUCES=7971
+16/02/22 15:52:52 INFO mapred.JobClient:     Total time spent by all reduces waiting after reserving slots (ms)=0
+16/02/22 15:52:52 INFO mapred.JobClient:     SLOTS_MILLIS_MAPS=2710
+16/02/22 15:52:52 INFO mapred.JobClient:     Total time spent by all maps waiting after reserving slots (ms)=0
+16/02/22 15:52:52 INFO mapred.JobClient:     Data-local map tasks=1
+16/02/22 15:52:52 INFO mapred.JobClient:   File Output Format Counters 
+16/02/22 15:52:52 INFO mapred.JobClient:     Bytes Written=2406
+
+real	0m12.960s
+user	0m1.672s
+sys	0m0.186s
+Check output files from HDFS.. but i remove the old output data first
+stopping jobtracker
+comet-14-70.ibnet: stopping tasktracker
+comet-14-71.ibnet: stopping tasktracker
+stopping namenode
+comet-14-71.ibnet: stopping datanode
+comet-14-70.ibnet: stopping datanode
+comet-14-70.ibnet: stopping secondarynamenode
+Copying Hadoop logs back to /home/rachelym/cometcluster/logs...
+`/scratch/rachelym/1653552/logs' -> `/home/rachelym/cometcluster/logs'
+`/scratch/rachelym/1653552/logs/job_201602221552_0001_conf.xml' -> `/home/rachelym/cometcluster/logs/job_201602221552_0001_conf.xml'
+`/scratch/rachelym/1653552/logs/hadoop-rachelym-jobtracker-comet-14-70.out' -> `/home/rachelym/cometcluster/logs/hadoop-rachelym-jobtracker-comet-14-70.out'
+`/scratch/rachelym/1653552/logs/hadoop-rachelym-namenode-comet-14-70.log' -> `/home/rachelym/cometcluster/logs/hadoop-rachelym-namenode-comet-14-70.log'
+`/scratch/rachelym/1653552/logs/hadoop-rachelym-tasktracker-comet-14-70.sdsc.edu.log' -> `/home/rachelym/cometcluster/logs/hadoop-rachelym-tasktracker-comet-14-70.sdsc.edu.log'
+`/scratch/rachelym/1653552/logs/hadoop-rachelym-datanode-comet-14-70.sdsc.edu.log' -> `/home/rachelym/cometcluster/logs/hadoop-rachelym-datanode-comet-14-70.sdsc.edu.log'
+`/scratch/rachelym/1653552/logs/hadoop-rachelym-secondarynamenode-comet-14-70.sdsc.edu.log' -> `/home/rachelym/cometcluster/logs/hadoop-rachelym-secondarynamenode-comet-14-70.sdsc.edu.log'
+`/scratch/rachelym/1653552/logs/hadoop-rachelym-secondarynamenode-comet-14-70.sdsc.edu.out' -> `/home/rachelym/cometcluster/logs/hadoop-rachelym-secondarynamenode-comet-14-70.sdsc.edu.out'
+`/scratch/rachelym/1653552/logs/history' -> `/home/rachelym/cometcluster/logs/history'
+`/scratch/rachelym/1653552/logs/history/done' -> `/home/rachelym/cometcluster/logs/history/done'
+`/scratch/rachelym/1653552/logs/history/done/version-1' -> `/home/rachelym/cometcluster/logs/history/done/version-1'
+`/scratch/rachelym/1653552/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_' -> `/home/rachelym/cometcluster/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_'
+`/scratch/rachelym/1653552/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016' -> `/home/rachelym/cometcluster/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016'
+`/scratch/rachelym/1653552/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02' -> `/home/rachelym/cometcluster/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02'
+`/scratch/rachelym/1653552/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02/22' -> `/home/rachelym/cometcluster/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02/22'
+`/scratch/rachelym/1653552/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02/22/000000' -> `/home/rachelym/cometcluster/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02/22/000000'
+`/scratch/rachelym/1653552/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02/22/000000/.job_201602221552_0001_conf.xml.crc' -> `/home/rachelym/cometcluster/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02/22/000000/.job_201602221552_0001_conf.xml.crc'
+`/scratch/rachelym/1653552/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02/22/000000/job_201602221552_0001_conf.xml' -> `/home/rachelym/cometcluster/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02/22/000000/job_201602221552_0001_conf.xml'
+`/scratch/rachelym/1653552/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02/22/000000/.job_201602221552_0001_1456185160145_rachelym_analyze+log.crc' -> `/home/rachelym/cometcluster/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02/22/000000/.job_201602221552_0001_1456185160145_rachelym_analyze+log.crc'
+`/scratch/rachelym/1653552/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02/22/000000/job_201602221552_0001_1456185160145_rachelym_analyze+log' -> `/home/rachelym/cometcluster/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02/22/000000/job_201602221552_0001_1456185160145_rachelym_analyze+log'
+`/scratch/rachelym/1653552/logs/hadoop-rachelym-namenode-comet-14-70.out' -> `/home/rachelym/cometcluster/logs/hadoop-rachelym-namenode-comet-14-70.out'
+`/scratch/rachelym/1653552/logs/hadoop-rachelym-datanode-comet-14-70.sdsc.edu.out' -> `/home/rachelym/cometcluster/logs/hadoop-rachelym-datanode-comet-14-70.sdsc.edu.out'
+`/scratch/rachelym/1653552/logs/hadoop-rachelym-tasktracker-comet-14-70.sdsc.edu.out' -> `/home/rachelym/cometcluster/logs/hadoop-rachelym-tasktracker-comet-14-70.sdsc.edu.out'
+`/scratch/rachelym/1653552/logs/userlogs' -> `/home/rachelym/cometcluster/logs/userlogs'
+`/scratch/rachelym/1653552/logs/hadoop-rachelym-jobtracker-comet-14-70.log' -> `/home/rachelym/cometcluster/logs/hadoop-rachelym-jobtracker-comet-14-70.log'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch/userlogs'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch/jobTracker'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch/taskTracker'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch/ttprivate'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch/tt_log_tmp'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch'
+removed directory: `/scratch/rachelym/1653552/tmp/dfs/namesecondary'
+removed directory: `/scratch/rachelym/1653552/tmp/dfs'
+removed directory: `/scratch/rachelym/1653552/tmp'
+removed `/scratch/rachelym/1653552/namenode_data/previous.checkpoint/VERSION'
+removed `/scratch/rachelym/1653552/namenode_data/previous.checkpoint/fstime'
+removed `/scratch/rachelym/1653552/namenode_data/previous.checkpoint/fsimage'
+removed `/scratch/rachelym/1653552/namenode_data/previous.checkpoint/edits'
+removed directory: `/scratch/rachelym/1653552/namenode_data/previous.checkpoint'
+removed `/scratch/rachelym/1653552/namenode_data/current/fsimage'
+removed `/scratch/rachelym/1653552/namenode_data/current/fstime'
+removed `/scratch/rachelym/1653552/namenode_data/current/VERSION'
+removed `/scratch/rachelym/1653552/namenode_data/current/edits'
+removed directory: `/scratch/rachelym/1653552/namenode_data/current'
+removed `/scratch/rachelym/1653552/namenode_data/image/fsimage'
+removed directory: `/scratch/rachelym/1653552/namenode_data/image'
+removed directory: `/scratch/rachelym/1653552/namenode_data'
+removed `/scratch/rachelym/1653552/hdfs_data/current/blk_-6350157453907496944'
+removed `/scratch/rachelym/1653552/hdfs_data/current/dncp_block_verification.log.curr'
+removed `/scratch/rachelym/1653552/hdfs_data/current/blk_7757111868756302188_1002.meta'
+removed `/scratch/rachelym/1653552/hdfs_data/current/VERSION'
+removed `/scratch/rachelym/1653552/hdfs_data/current/blk_-7634719172433322073_1001.meta'
+removed `/scratch/rachelym/1653552/hdfs_data/current/blk_-5710884218840259073_1011.meta'
+removed `/scratch/rachelym/1653552/hdfs_data/current/blk_-5710884218840259073'
+removed `/scratch/rachelym/1653552/hdfs_data/current/blk_8389886191679287515_1012.meta'
+removed `/scratch/rachelym/1653552/hdfs_data/current/blk_7757111868756302188'
+removed `/scratch/rachelym/1653552/hdfs_data/current/blk_8389886191679287515'
+removed `/scratch/rachelym/1653552/hdfs_data/current/blk_-7634719172433322073'
+removed `/scratch/rachelym/1653552/hdfs_data/current/blk_-6350157453907496944_1010.meta'
+removed directory: `/scratch/rachelym/1653552/hdfs_data/current'
+removed directory: `/scratch/rachelym/1653552/hdfs_data/detach'
+removed `/scratch/rachelym/1653552/hdfs_data/storage'
+removed directory: `/scratch/rachelym/1653552/hdfs_data/blocksBeingWritten'
+removed directory: `/scratch/rachelym/1653552/hdfs_data/tmp'
+removed directory: `/scratch/rachelym/1653552/hdfs_data'
+removed `/scratch/rachelym/1653552/pids/hadoop-rachelym-namenode.pid'
+removed `/scratch/rachelym/1653552/pids/hadoop-rachelym-jobtracker.pid'
+removed `/scratch/rachelym/1653552/pids/hadoop-rachelym-secondarynamenode.pid'
+removed `/scratch/rachelym/1653552/pids/hadoop-rachelym-tasktracker.pid'
+removed `/scratch/rachelym/1653552/pids/hadoop-rachelym-datanode.pid'
+removed directory: `/scratch/rachelym/1653552/pids'
+removed `/scratch/rachelym/1653552/logs/job_201602221552_0001_conf.xml'
+removed `/scratch/rachelym/1653552/logs/hadoop-rachelym-jobtracker-comet-14-70.out'
+removed `/scratch/rachelym/1653552/logs/hadoop-rachelym-namenode-comet-14-70.log'
+removed `/scratch/rachelym/1653552/logs/hadoop-rachelym-tasktracker-comet-14-70.sdsc.edu.log'
+removed `/scratch/rachelym/1653552/logs/hadoop-rachelym-datanode-comet-14-70.sdsc.edu.log'
+removed `/scratch/rachelym/1653552/logs/hadoop-rachelym-secondarynamenode-comet-14-70.sdsc.edu.log'
+removed `/scratch/rachelym/1653552/logs/hadoop-rachelym-secondarynamenode-comet-14-70.sdsc.edu.out'
+removed `/scratch/rachelym/1653552/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02/22/000000/.job_201602221552_0001_conf.xml.crc'
+removed `/scratch/rachelym/1653552/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02/22/000000/job_201602221552_0001_conf.xml'
+removed `/scratch/rachelym/1653552/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02/22/000000/.job_201602221552_0001_1456185160145_rachelym_analyze+log.crc'
+removed `/scratch/rachelym/1653552/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02/22/000000/job_201602221552_0001_1456185160145_rachelym_analyze+log'
+removed directory: `/scratch/rachelym/1653552/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02/22/000000'
+removed directory: `/scratch/rachelym/1653552/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02/22'
+removed directory: `/scratch/rachelym/1653552/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016/02'
+removed directory: `/scratch/rachelym/1653552/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_/2016'
+removed directory: `/scratch/rachelym/1653552/logs/history/done/version-1/comet-14-70.ibnet_1456185156351_'
+removed directory: `/scratch/rachelym/1653552/logs/history/done/version-1'
+removed directory: `/scratch/rachelym/1653552/logs/history/done'
+removed directory: `/scratch/rachelym/1653552/logs/history'
+removed `/scratch/rachelym/1653552/logs/hadoop-rachelym-namenode-comet-14-70.out'
+removed `/scratch/rachelym/1653552/logs/hadoop-rachelym-datanode-comet-14-70.sdsc.edu.out'
+removed `/scratch/rachelym/1653552/logs/hadoop-rachelym-tasktracker-comet-14-70.sdsc.edu.out'
+removed directory: `/scratch/rachelym/1653552/logs/userlogs'
+removed `/scratch/rachelym/1653552/logs/hadoop-rachelym-jobtracker-comet-14-70.log'
+removed directory: `/scratch/rachelym/1653552/logs'
+removed `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001/attempt_201602221552_0001_m_000000_0/syslog'
+removed `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001/attempt_201602221552_0001_m_000000_0/log.index'
+removed `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001/attempt_201602221552_0001_m_000000_0/stdout'
+removed `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001/attempt_201602221552_0001_m_000000_0/stderr'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001/attempt_201602221552_0001_m_000000_0'
+removed `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001/attempt_201602221552_0001_m_000001_0/stderr'
+removed `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001/attempt_201602221552_0001_m_000001_0/log.index'
+removed `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001/attempt_201602221552_0001_m_000001_0/stdout'
+removed `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001/attempt_201602221552_0001_m_000001_0/syslog'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001/attempt_201602221552_0001_m_000001_0'
+removed `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001/attempt_201602221552_0001_r_000000_0/stdout'
+removed `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001/attempt_201602221552_0001_r_000000_0/syslog'
+removed `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001/attempt_201602221552_0001_r_000000_0/log.index'
+removed `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001/attempt_201602221552_0001_r_000000_0/stderr'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001/attempt_201602221552_0001_r_000000_0'
+removed `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001/attempt_201602221552_0001_m_000002_0/stdout'
+removed `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001/attempt_201602221552_0001_m_000002_0/syslog'
+removed `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001/attempt_201602221552_0001_m_000002_0/stderr'
+removed `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001/attempt_201602221552_0001_m_000002_0/log.index'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001/attempt_201602221552_0001_m_000002_0'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch/userlogs/job_201602221552_0001'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch/userlogs'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch/tt_log_tmp'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch/ttprivate/taskTracker/rachelym/jobcache'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch/ttprivate/taskTracker/rachelym'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch/ttprivate/taskTracker'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch/ttprivate'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch/taskTracker/rachelym/jobcache'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch/taskTracker/rachelym/distcache'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch/taskTracker/rachelym'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch/taskTracker'
+removed directory: `/scratch/rachelym/1653552/mapred_scratch'
+removed `/scratch/rachelym/1653552/hdfs_data/storage'
+removed directory: `/scratch/rachelym/1653552/hdfs_data/detach'
+removed directory: `/scratch/rachelym/1653552/hdfs_data/blocksBeingWritten'
+removed `/scratch/rachelym/1653552/hdfs_data/current/blk_-5710884218840259073_1011.meta'
+removed `/scratch/rachelym/1653552/hdfs_data/current/blk_8389886191679287515'
+removed `/scratch/rachelym/1653552/hdfs_data/current/blk_-7634719172433322073'
+removed `/scratch/rachelym/1653552/hdfs_data/current/blk_-5710884218840259073'
+removed `/scratch/rachelym/1653552/hdfs_data/current/blk_8389886191679287515_1012.meta'
+removed `/scratch/rachelym/1653552/hdfs_data/current/blk_7757111868756302188'
+removed `/scratch/rachelym/1653552/hdfs_data/current/blk_-6350157453907496944_1010.meta'
+removed `/scratch/rachelym/1653552/hdfs_data/current/dncp_block_verification.log.curr'
+removed `/scratch/rachelym/1653552/hdfs_data/current/blk_7757111868756302188_1002.meta'
+removed `/scratch/rachelym/1653552/hdfs_data/current/blk_-6350157453907496944'
+removed `/scratch/rachelym/1653552/hdfs_data/current/VERSION'
+removed `/scratch/rachelym/1653552/hdfs_data/current/blk_-7634719172433322073_1001.meta'
+removed directory: `/scratch/rachelym/1653552/hdfs_data/current'
+removed directory: `/scratch/rachelym/1653552/hdfs_data/tmp'
+removed directory: `/scratch/rachelym/1653552/hdfs_data'
+removed `/scratch/rachelym/1653552/pids/hadoop-rachelym-datanode.pid'
+removed `/scratch/rachelym/1653552/pids/hadoop-rachelym-tasktracker.pid'
+removed directory: `/scratch/rachelym/1653552/pids'
+removed `/scratch/rachelym/1653552/logs/hadoop-rachelym-tasktracker-comet-14-71.sdsc.edu.out'
+removed `/scratch/rachelym/1653552/logs/hadoop-rachelym-datanode-comet-14-71.sdsc.edu.out'
+removed `/scratch/rachelym/1653552/logs/userlogs/job_201602221552_0001/attempt_201602221552_0001_m_000000_0'
+removed `/scratch/rachelym/1653552/logs/userlogs/job_201602221552_0001/attempt_201602221552_0001_m_000001_0'
+removed `/scratch/rachelym/1653552/logs/userlogs/job_201602221552_0001/attempt_201602221552_0001_r_000000_0'
+removed `/scratch/rachelym/1653552/logs/userlogs/job_201602221552_0001/attempt_201602221552_0001_m_000002_0'
+removed `/scratch/rachelym/1653552/logs/userlogs/job_201602221552_0001/job-acls.xml'
+removed directory: `/scratch/rachelym/1653552/logs/userlogs/job_201602221552_0001'
+removed directory: `/scratch/rachelym/1653552/logs/userlogs'
+removed `/scratch/rachelym/1653552/logs/hadoop-rachelym-datanode-comet-14-71.sdsc.edu.log'
+removed `/scratch/rachelym/1653552/logs/hadoop-rachelym-tasktracker-comet-14-71.sdsc.edu.log'
+removed directory: `/scratch/rachelym/1653552/logs'
+removed directory: `/tmp/Jetty_0_0_0_0_50060_task____.2vcltf_4331568975293565488/jsp'
+removed directory: `/tmp/Jetty_0_0_0_0_50060_task____.2vcltf_4331568975293565488/.active'
+removed directory: `/tmp/Jetty_0_0_0_0_50060_task____.2vcltf_4331568975293565488'
+removed directory: `/tmp/Jetty_0_0_0_0_50090_secondary____y6aanv/jsp'
+removed directory: `/tmp/Jetty_0_0_0_0_50090_secondary____y6aanv/.active'
+removed directory: `/tmp/Jetty_0_0_0_0_50090_secondary____y6aanv'
+removed directory: `/tmp/Jetty_0_0_0_0_50030_job____yn7qmk/jsp'
+removed directory: `/tmp/Jetty_0_0_0_0_50030_job____yn7qmk/.active'
+removed directory: `/tmp/Jetty_0_0_0_0_50030_job____yn7qmk'
+removed directory: `/tmp/Jetty_0_0_0_0_50070_hdfs____w2cu08/jsp'
+removed directory: `/tmp/Jetty_0_0_0_0_50070_hdfs____w2cu08/.active'
+removed directory: `/tmp/Jetty_0_0_0_0_50070_hdfs____w2cu08'
+removed directory: `/tmp/Jetty_0_0_0_0_50075_datanode____hwtdwq_3690127610629800002/jsp'
+removed directory: `/tmp/Jetty_0_0_0_0_50075_datanode____hwtdwq_3690127610629800002/.active'
+removed directory: `/tmp/Jetty_0_0_0_0_50075_datanode____hwtdwq_3690127610629800002'

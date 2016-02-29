@@ -1,0 +1,9 @@
+make[1]: Entering directory `/home/rachelym/hw2/log'
+mkdir -p target
+javac -classpath /opt/hadoop/1.2.1/hadoop-core-1.2.1.jar:/opt/hadoop/1.2.1/hadoop-client-1.2.1.jar    -d target src/*.java
+jar -cvf loganalyzer.jar  -C target/ .
+added manifest
+adding: LogAnalyzer.class(in = 1456) (out= 833)(deflated 42%)
+adding: Reduce.class(in = 1679) (out= 709)(deflated 57%)
+adding: Map.class(in = 2088) (out= 931)(deflated 55%)
+make[1]: Leaving directory `/home/rachelym/hw2/log'

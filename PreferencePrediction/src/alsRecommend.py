@@ -9,6 +9,7 @@ import os
 import itertools
 import math
 import sys
+from operator import add
 
 from pyspark import SparkConf, SparkContext
 from pyspark import mllib
@@ -108,10 +109,10 @@ def computeRmse(model, evalSet):
 if __name__ == "__main__":
     conf = SparkConf() \
       .setAppName("YelpReviewALS") \
-      .set("spark.executor.memory", "2g")
+      .set("spark.executor.memory", "1g")
     sc = SparkContext('local', conf=conf)
 
-    reviewRDD = sc.textFile("../../../data/yelp_academic_dataset_review_res.txt")
+    reviewRDD = sc.textFile("../../../data/review_large.txt")
     sc.setCheckpointDir("checkpoints/")
 
     if len(sys.argv) < 2:
@@ -140,7 +141,7 @@ if __name__ == "__main__":
     else:
         runRecommend = False
 
-    defaultNumOfReviews = 1000000
+    defaultNumOfReviews = 1600000
 
     if len(sys.argv) == 3:
         if runRecommend:
@@ -183,7 +184,7 @@ if __name__ == "__main__":
 
     ratings = ratings.map(lambda (x, y): (x, Review.replaceIDwithNum(y, getUserIndexBC, getRestIndexBC)))
     usrRatingAvg = ratings.values().map(lambda x: (x[0], x[2])).reduceByKey(Review.reducer).map(Review.reshape)\
-                    .filter(lambda x: len(x[1]) >= 9).map(Review.reshapeList)\
+                    .filter(lambda x: len(x[1]) >= 3).map(Review.reshapeList)\
                     .map(lambda x: (x[0], sum(x[1])/float(len(x[1]))))
     usrRatingAvgBC = sc.broadcast(dict(usrRatingAvg.collect()))
     ratings = ratings.filter(lambda x: x[1][0] in usrRatingAvgBC.value).map(lambda (x, y): (x, Review.subtractAvg(y, usrRatingAvgBC)))
@@ -210,7 +211,7 @@ if __name__ == "__main__":
         .repartition(numOfPartitions) \
         .cache()
 
-    test = ratings.filter(lambda x: x[0] > 8).values()\
+    test = ratings.filter(lambda x: x[0] > 8 or x[0] == 3).values()\
         .filter(lambda x: x[0] in trainingUsrSetBC.value and x[1] in trainingRestSetBC.value).cache()
 
     testMean = test.map(lambda x: x[2]).mean()
@@ -300,7 +301,7 @@ if __name__ == "__main__":
 
     else:
         fixRank = 25
-        fixLambda = 10.0
+        fixLambda = 0.01
         fixNumIter = 25
 
         model = ALS.train(training, fixRank, fixNumIter, fixLambda)
@@ -309,6 +310,11 @@ if __name__ == "__main__":
         print("Model training on a data set of %d " % numTraining)
         print("rank = %d and lambda = %.2f, " % (fixRank, fixLambda) +
               "and numIter = %d, and its RMSE on the test set is %f." % (fixNumIter, testRmse))
+
+        meanRating = training.union(validation).map(lambda x: x[2]).mean()
+        baselineRmse = math.sqrt(test.map(lambda x: (meanRating - x[2]) ** 2).reduce(add) / numTest)
+        improvement = (baselineRmse - testRmse) / baselineRmse * 100
+        print("The best model improves the baseline by %.2f" % improvement + "%.")
 
     if runRecommend:
         myRatedRestIds = set([item for item in myRatings.map(lambda x: x[1][1]).collect()])

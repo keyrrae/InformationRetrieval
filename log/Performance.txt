@@ -1,0 +1,39 @@
+Daily traffic - number of unique users:
+06/Feb/2013	298
+07/Feb/2013	298
+08/Feb/2013	298
+09/Feb/2013	298
+10/Feb/2013	298
+11/Feb/2013	298
+12/Feb/2013	298
+
+Daily traffic - number of page views:
+06/Feb/2013	147456
+07/Feb/2013	142640
+08/Feb/2013	147984
+09/Feb/2013	147376
+10/Feb/2013	151184
+11/Feb/2013	150160
+12/Feb/2013	148192
+
+Top 5 most frequent URLs:
+/flower_store/category.screen?category_id=FLOWERS    232288
+/flower_store/category.screen?category_id=GIFTS    142160
+/flower_store/category.screen?category_id=PLANTS    121232
+/flower_store/category.screen?category_id=BALLOONS    88688
+/flower_store/category.screen?category_id=CANDY    86240
+
+Top 5 most frequent users:
+233.77.49.50    4528
+192.1.2.35    4400
+192.1.2.44    4320
+187.231.45.35    4320
+189.222.1.40    4304
+
+Total time of running all the tasks and collecting all the data:
+Core 1: 182s
+Core 2: 101s
+Core 4: 76s
+
+We didn't change other parameters.
+It's obvious that the task runs faster as the number of cores grows

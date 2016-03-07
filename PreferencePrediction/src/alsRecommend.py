@@ -211,7 +211,7 @@ if __name__ == "__main__":
         .repartition(numOfPartitions) \
         .cache()
 
-    test = ratings.filter(lambda x: x[0] > 8 or x[0] == 3).values()\
+    test = ratings.filter(lambda x: x[0] > 8).values()\
         .filter(lambda x: x[0] in trainingUsrSetBC.value and x[1] in trainingRestSetBC.value).cache()
 
     testMean = test.map(lambda x: x[2]).mean()
@@ -301,7 +301,7 @@ if __name__ == "__main__":
 
     else:
         fixRank = 25
-        fixLambda = 0.01
+        fixLambda = 5.0
         fixNumIter = 25
 
         model = ALS.train(training, fixRank, fixNumIter, fixLambda)
